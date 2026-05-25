@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Mexxa Pharmacy</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f4f8fb;
+      color:#222;
+      line-height:1.6;
+    }
+
+    header{
+      background:#0a7cff;
+      color:white;
+      padding:20px;
+      text-align:center;
+    }
+
+    header h1{
+      font-size:40px;
+      margin-bottom:5px;
+    }
+
+    nav{
+      background:#055ec7;
+      padding:15px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#dbe9ff;
+    }
+
+    .hero{
+      padding:60px 20px;
+      text-align:center;
+      background:white;
+    }
+
+    .hero h2{
+      font-size:36px;
+      margin-bottom:10px;
+      color:#0a7cff;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      padding:30px 0;
+    }
+
+    .info-section{
+      background:white;
+      padding:25px;
+      border-radius:10px;
+      margin-bottom:30px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .location-box{
+      background:#f0f6ff;
+      padding:15px;
+      border-left:5px solid #0a7cff;
+      margin-bottom:15px;
+      border-radius:5px;
+    }
+
+    .search-box{
+      margin-bottom:25px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .search-box input{
+      width:100%;
+      max-width:500px;
+      padding:14px;
+      border-radius:8px;
+      border:1px solid #ccc;
+      font-size:16px;
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;
+    }
+
+    .product-card{
+      background:white;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .product-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .product-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      background:#f8f9fa;
+    }
+
+    .product-info{
+      padding:15px;
+    }
+
+    .product-info h3{
+      margin-bottom:10px;
+      color:#0a7cff;
+    }
+
+    .price{
+      color:green;
+      font-size:22px;
+      margin-bottom:10px;
+      font-weight:bold;
+    }
+
+    .stock{
+      display:inline-block;
+      margin-bottom:10px;
+      padding:5px 12px;
+      border-radius:20px;
+      font-size:14px;
+      font-weight:bold;
+    }
+
+    .whatsapp-btn{
+      display:inline-block;
+      margin-top:10px;
+      background:#25d366;
+      color:white;
+      text-decoration:none;
+      padding:10px 15px;
+      border-radius:5px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .whatsapp-btn:hover{
+      background:#1ebc59;
+    }
+
+    .categories{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:25px;
+      justify-content:center;
+    }
+
+    .category-btn{
+      border:none;
+      background:white;
+      padding:10px 15px;
+      border-radius:30px;
+      cursor:pointer;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .category-btn:hover{
+      background:#0a7cff;
+      color:white;
+    }
+
+    .loading,
+    .error-message{
+      text-align:center;
+      padding:50px;
+      grid-column:1/-1;
+    }
+
+    .error-message{
+      color:red;
+    }
+
+    .skeleton{
+      height:320px;
+      border-radius:10px;
+
+      background:linear-gradient(
+        90deg,
+        #eee 25%,
+        #f5f5f5 50%,
+        #eee 75%
+      );
+
+      background-size:200% 100%;
+      animation:shine 1.2s infinite;
+    }
+
+    @keyframes shine{
+
+      to{
+        background-position:-200% 0;
+      }
+
+    }
+
+    footer{
+      background:#055ec7;
+      color:white;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+    }
+
+    @media(max-width:768px){
+
+      header h1{
+        font-size:30px;
+      }
+
+      .hero h2{
+        font-size:28px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <h1>Mexxa Pharmacy</h1>
+
+    <p>
+      Your Trusted Health Partner
+    </p>
+
+  </header>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+
+    <a href="#home">Home</a>
+
+    <a href="#productsSection">Products</a>
+
+    <a href="#locations">Locations</a>
+
+    <a href="#contact">Contact</a>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section
+    class="hero"
+    id="home"
+  >
+
+    <h2>
+      Welcome to Mexxa Pharmacy
+    </h2>
+
+    <p>
+      Quality Medicines • Healthcare • Wellness
+    </p>
+
+    <br>
+
+    <a
+      class="whatsapp-btn"
+      href="https://wa.me/256761545095"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      Order on WhatsApp
+
+    </a>
+
+  </section>
+
+  <!-- MAIN CONTAINER -->
+
+  <div class="container">
+
+    <!-- LOCATIONS -->
+
+    <section
+      class="info-section"
+      id="locations"
+    >
+
+      <h2>Our Locations</h2>
+
+      <br>
+
+      <div class="location-box">
+
+        <strong>
+          📍 HW Mall Kitintale
+        </strong>
+
+        <br>
+
+        Opposite UMEME Offices
+
+        <br><br>
+
+        📞 0761 545 095
+
+        <br>
+
+        ☎️ 0779 449 127
+
+      </div>
+
+      <div class="location-box">
+
+        <strong>
+          📍 Shell Kitetika
+        </strong>
+
+        <br>
+
+        Opposite Kumbuzi on Gayaza Road
+
+        <br><br>
+
+        📞 0766 528 078
+
+        <br>
+
+        ☎️ 0779 448 127
+
+      </div>
+
+    </section>
+
+    <!-- SEARCH -->
+
+    <section id="productsSection">
+
+      <div class="search-box">
+
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search medicines, categories or descriptions..."
+        >
+
+      </div>
+
+      <!-- CATEGORY FILTERS -->
+
+      <div
+        class="categories"
+        id="categoryButtons"
+      ></div>
+
+      <!-- PRODUCTS -->
+
+      <div
+        class="products"
+        id="productList"
+      ></div>
+
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <footer id="contact">
+
+    <p>
+      © 2026 Mexxa Pharmacy. All Rights Reserved.
+    </p>
+
+    <br>
+
+    <p>
+      Prescription medicines are dispensed only with a valid prescription.
+    </p>
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    // ============================================
+    // GOOGLE SHEETS URL
+    // ============================================
+
+    const SHEET_URL =
+      "https://docs.google.com/spreadsheets/d/1gYhoQr4vytvW8Kv3ZZ6N7_ndmmav_WbGeRSukNa8J6Q/gviz/tq?tqx=out:json";
+
+    // ============================================
+    // PRODUCTS ARRAY
+    // ============================================
+
+    let products = [];
+
+    let currentCategory = "All";
+
+    // ============================================
+    // LOAD PRODUCTS
+    // ============================================
+
+    async function loadProducts(){
+
+      const container =
+        document.getElementById("productList");
+
+      // SKELETON LOADING
+
+      container.innerHTML = "";
+
+      for(let i = 0; i < 6; i++){
+
+        container.innerHTML += `
+          <div class="skeleton"></div>
+        `;
+
+      }
+
+      try{
+
+        const response =
+          await fetch(SHEET_URL);
+
+        const text =
+          await response.text();
+
+        const jsonText =
+          text.substring(
+            text.indexOf("{"),
+            text.lastIndexOf("}") + 1
+          );
+
+        const data =
+          JSON.parse(jsonText);
+
+        products =
+          data.table.rows.map(row => ({
+
+            name:
+              row.c[0]?.v || "Unknown",
+
+            price:
+              Number(row.c[1]?.v || 0)
+                .toLocaleString(),
+
+            description:
+              row.c[2]?.v || "",
+
+            category:
+              row.c[3]?.v || "General",
+
+            stock:
+              row.c[4]?.v || "In Stock",
+
+            image:
+              row.c[5]?.v ||
+
+              "https://via.placeholder.com/300x220.png?text=No+Image"
+
+          }))
+          .filter(product => product.name);
+
+        createCategoryButtons();
+
+        renderProducts();
+
+      }
+
+      catch(error){
+
+        console.error(error);
+
+        container.innerHTML = `
+          <p class="error-message">
+            Could not load products.<br>
+            Make sure your Google Sheet is public.
+          </p>
+        `;
+
+      }
+
+    }
+
+    // ============================================
+    // CREATE CATEGORY BUTTONS
+    // ============================================
+
+    function createCategoryButtons(){
+
+      const categories =
+        ["All", ...new Set(
+          products.map(p => p.category)
+        )];
+
+      const container =
+        document.getElementById("categoryButtons");
+
+      container.innerHTML = "";
+
+      categories.forEach(category => {
+
+        const btn =
+          document.createElement("button");
+
+        btn.className = "category-btn";
+
+        btn.innerText = category;
+
+        btn.onclick = () => {
+
+          currentCategory = category;
+
+          renderProducts(
+            document.getElementById("searchInput").value
+          );
+
+        };
+
+        container.appendChild(btn);
+
+      });
+
+    }
+
+    // ============================================
+    // RENDER PRODUCTS
+    // ============================================
+
+    function renderProducts(filter = ""){
+
+      const container =
+        document.getElementById("productList");
+
+      container.innerHTML = "";
+
+      const query =
+        filter.trim().toLowerCase();
+
+      const filteredProducts =
+        products.filter(product => {
+
+          const matchesSearch =
+
+            product.name
+              .toLowerCase()
+              .includes(query)
+
+            ||
+
+            product.category
+              .toLowerCase()
+              .includes(query)
+
+            ||
+
+            product.description
+              .toLowerCase()
+              .includes(query);
+
+          const matchesCategory =
+
+            currentCategory === "All"
+
+            ||
+
+            product.category === currentCategory;
+
+          return (
+            matchesSearch &&
+            matchesCategory
+          );
+
+        });
+
+      if(filteredProducts.length === 0){
+
+        container.innerHTML = `
+          <p class="loading">
+            No products found.
+          </p>
+        `;
+
+        return;
+
+      }
+
+      filteredProducts.forEach(product => {
+
+        const card =
+          document.createElement("div");
+
+        card.className = "product-card";
+
+        card.innerHTML = `
+
+          <img
+            src="${product.image}"
+            alt="${product.name}"
+            loading="lazy"
+
+            onerror="
+              this.onerror=null;
+              this.src='https://via.placeholder.com/300x220.png?text=No+Image';
+            "
+          >
+
+          <div class="product-info">
+
+            <h3>
+              ${product.name}
+            </h3>
+
+            <div class="price">
+              UGX ${product.price}
+            </div>
+
+            <div
+              class="stock"
+
+              style="
+                background:
+                ${product.stock === 'Out of Stock'
+                  ? '#ffe8e8'
+                  : '#e8fbe8'};
+
+                color:
+                ${product.stock === 'Out of Stock'
+                  ? 'red'
+                  : 'green'};
+              "
+            >
+
+              ${product.stock}
+
+            </div>
+
+            <p>
+
+              <strong>Category:</strong>
+
+              ${product.category}
+
+            </p>
+
+            <p>
+
+              ${product.description}
+
+            </p>
+
+            <a
+              href="https://wa.me/256761545095?text=Hello%20Mexxa%20Pharmacy,%20I%20want%20to%20order%20${encodeURIComponent(product.name)}"
+
+              target="_blank"
+
+              rel="noopener noreferrer"
+
+              class="whatsapp-btn"
+            >
+
+              Order Now
+
+            </a>
+
+          </div>
+
+        `;
+
+        container.appendChild(card);
+
+      });
+
+    }
+
+    // ============================================
+    // SEARCH PRODUCTS
+    // ============================================
+
+    document
+      .getElementById("searchInput")
+
+      .addEventListener("input", (e) => {
+
+        renderProducts(e.target.value);
+
+      });
+
+    // ============================================
+    // LOAD PRODUCTS ON START
+    // ============================================
+
+    window.onload = loadProducts;
+
+  </script>
+
+</body>
+
+</html>
