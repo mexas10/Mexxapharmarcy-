@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mexxa Pharmacy</title>
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif;}
+    body{background:#f8fafc;color:#1e2937;line-height:1.7;}
+    
+    header{
+      background:linear-gradient(135deg,#0a7cff,#1e40af);
+      color:white;
+      padding:35px 20px;
+      text-align:center;
+      box-shadow:0 4px 20px rgba(10,124,255,0.3);
+    }
+    header h1{font-size:48px;font-weight:800;margin-bottom:8px;}
+    header p{font-size:19px;opacity:0.95;}
+
+    nav{
+      background:#0a7cff;
+      padding:18px 0;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 2px 12px rgba(0,0,0,0.1);
+    }
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin:0 18px;
+      font-weight:600;
+      font-size:17px;
+    }
+    nav a:hover{color:#bae6fd;}
+
+    .hero{
+      padding:70px 20px;
+      text-align:center;
+      background:linear-gradient(135deg,#f0f9ff,#dbeafe);
+    }
+    .hero h2{font-size:38px;margin-bottom:12px;color:#0a7cff;}
+    .hero p{font-size:20px;color:#475569;max-width:600px;margin:0 auto 25px;}
+
+    .container{width:90%;max-width:1200px;margin:auto;padding:30px 0;}
+
+    .info-section{
+      background:white;
+      padding:35px;
+      border-radius:20px;
+      margin-bottom:40px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+    .info-section h2{color:#0a7cff;margin-bottom:20px;}
+
+    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;}
+    .product-card{
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
+      transition:all 0.4s ease;
+    }
+    .product-card:hover{
+      transform:translateY(-12px);
+      box-shadow:0 20px 40px rgba(10,124,255,0.15);
+    }
+    .product-card img{
+      width:100%;
+      height:250px;
+      object-fit:contain;
+      background:#f8fafc;
+      padding:20px;
+    }
+
+    .product-info{padding:20px;}
+    .product-info h3{font-size:1.25rem;margin-bottom:8px;color:#0a7cff;}
+    .price{color:#10b981;font-size:1.5rem;font-weight:700;margin:10px 0;}
+    .stock{padding:6px 16px;border-radius:30px;font-size:14.5px;font-weight:600;}
+
+    .whatsapp-btn{
+      background:#25d366;
+      color:white;
+      padding:14px 24px;
+      border-radius:12px;
+      font-weight:600;
+      text-decoration:none;
+      display:inline-block;
+      margin-top:10px;
+    }
+
+    .search-box input{
+      width:100%;
+      max-width:550px;
+      padding:18px 22px;
+      border:2px solid #e2e8f0;
+      border-radius:16px;
+      font-size:17px;
+    }
+
+    .login-box, .admin-section{
+      background:white;
+      max-width:620px;
+      margin:50px auto;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 10px 35px rgba(0,0,0,0.1);
+    }
+
+    button{
+      width:100%;
+      background:#0a7cff;
+      color:white;
+      border:none;
+      padding:18px;
+      border-radius:12px;
+      cursor:pointer;
+      font-size:17px;
+      font-weight:600;
+      margin-top:10px;
+    }
+    #adminPanel{display:none;}
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mexxa Pharmacy</h1>
+    <p>Your Trusted Health Partner in Kampala</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#productsSection">Products</a>
+    <a href="#locations">Locations</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <h2>Welcome to Mexxa Pharmacy</h2>
+    <p>Quality Medicines • Professional Care • Affordable Prices</p>
+    <a class="whatsapp-btn" href="https://wa.me/256761545095" target="_blank">Order on WhatsApp</a>
+  </section>
+
+  <div class="container">
+
+    <section class="info-section" id="locations">
+      <h2>Our Locations</h2>
+      <div class="location-box">
+        <strong>📍 HW Mall Kitintale</strong><br>
+        Opposite UMEME Offices<br><br>
+        📞 0761 545 095<br>☎️ 0779 449 127
+      </div>
+      <div class="location-box">
+        <strong>📍 Shell Kitetika</strong><br>
+        Opposite Kumbuzi on Gayaza Road<br><br>
+        📞 0766 528 078<br>☎️ 0779 448 127
+      </div>
+    </section>
+
+    <section id="productsSection">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search medicines...">
+      </div>
+      <div class="products" id="productList"></div>
+    </section>
+
+    <div class="login-box">
+      <h2>Admin Login</h2>
+      <input type="password" id="password" placeholder="Enter Admin Password">
+      <button id="loginBtn">Login</button>
+    </div>
+
+    <div class="admin-section" id="adminPanel">
+      <h2>Add New Product</h2>
+      <input type="text" id="newName" placeholder="Product Name">
+      <input type="text" id="newPrice" placeholder="Price">
+      <textarea id="newDescription" placeholder="Description"></textarea>
+      <input type="text" id="newCategory" placeholder="Category">
+      <select id="newStock">
+        <option value="In Stock">In Stock</option>
+        <option value="Out of Stock">Out of Stock</option>
+      </select>
+      <input type="text" id="newImage" placeholder="Image Link">
+      <button id="addBtn">Copy to Sheet</button>
+    </div>
+
+  </div>
+
+  <footer id="contact" style="background:#0a7cff;color:white;text-align:center;padding:30px;margin-top:50px;">
+    <p>© 2026 Mexxa Pharmacy. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const SHEET_URL = "https://docs.google.com/spreadsheets/d/1gYhoQr4vytvW8Kv3ZZ6N7_ndmmav_WbGeRSukNa8J6Q/gviz/tq?tqx=out:json";
+
+    let products = [];
+
+    async function loadProducts() {
+      const container = document.getElementById("productList");
+      container.innerHTML = "<p style='text-align:center;padding:60px;'>Loading products...</p>";
+
+      try {
+        const response = await fetch(SHEET_URL + "&t=" + Date.now());
+        const text = await response.text();
+        const jsonText = text.substring(text.indexOf('{'), text.lastIndexOf('}') + 1);
+        const data = JSON.parse(jsonText);
+
+        products = data.table.rows.map(row => ({
+          name: row.c[0]?.v || "Unknown",
+          price: row.c[1]?.v || "UGX 0",
+          description: row.c[2]?.v || "",
+          category: row.c[3]?.v || "General",
+          stock: row.c[4]?.v || "In Stock",
+          image: row.c[5]?.v || ""
+        })).filter(p => p.name);
+
+        renderProducts();
+      } catch (error) {
+        container.innerHTML = `<p style="color:red;text-align:center;padding:60px;">Could not load products.</p>`;
+      }
+    }
+
+    function renderProducts(filter = "") {
+      const container = document.getElementById("productList");
+      container.innerHTML = "";
+
+      const filtered = products.filter(p => 
+        p.name.toLowerCase().includes(filter.toLowerCase()) ||
+        p.category.toLowerCase().includes(filter.toLowerCase())
+      );
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<p style="text-align:center;grid-column:1/-1;">No products found.</p>`;
+        return;
+      }
+
+      filtered.forEach(product => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+          <img src="\( {product.image}" alt=" \){product.name}" 
+               onerror="this.onerror=null;this.src='https://via.placeholder.com/300x220.png?text=${encodeURIComponent(product.name)}';">
+          <div class="product-info">
+            <h3>${product.name}</h3>
+            <div class="price">${product.price}</div>
+            <div class="stock" style="background:\( {product.stock === 'Out of Stock' ? '#ffe8e8' : '#e8fbe8'}; color: \){product.stock === 'Out of Stock' ? 'red' : 'green'}">
+              ${product.stock}
+            </div>
+            <p><strong>Category:</strong> ${product.category}</p>
+            <p>${product.description}</p>
+            <a href="https://wa.me/256761545095" target="_blank" class="whatsapp-btn">Order Now</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    document.getElementById("loginBtn").addEventListener("click", () => {
+      if (document.getElementById("password").value === "Mexxa2026") {
+        document.getElementById("adminPanel").style.display = "block";
+        alert("✅ Login Successful!");
+      } else {
+        alert("❌ Wrong Password");
+      }
+    });
+
+    document.getElementById("addBtn").addEventListener("click", () => {
+      const name = document.getElementById("newName").value.trim();
+      const price = document.getElementById("newPrice").value.trim();
+      const description = document.getElementById("newDescription").value.trim();
+      const category = document.getElementById("newCategory").value.trim();
+      const stock = document.getElementById("newStock").value;
+      const image = document.getElementById("newImage").value.trim();
+
+      if (!name || !price || !category) {
+        alert("Please fill Name, Price and Category");
+        return;
+      }
+
+      const rowText = `\( {name}\t \){price}\t\( {description}\t \){category}\t\( {stock}\t \){image}`;
+      navigator.clipboard.writeText(rowText);
+      alert("✅ Copied! Paste in Google Sheets.");
+    });
+
+    document.getElementById("searchInput").addEventListener("input", (e) => renderProducts(e.target.value));
+    window.onload = loadProducts;
+  </script>
+</body>
+</html>
