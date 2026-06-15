@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mexxa Pharmacy</title>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8445541531150962"
+          crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-8445541531150962">
+
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="YbL_SOge02q43ArOOBSYCoRWlFv9KMMDa5gQrf5on5U" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACoUlEQVR4AZySXUhTYRiAn3M259ym1taaka6UXEQ/RhRpEVaU/VldBHZRIYUk1KWZEeVFdyaZQV1IRV0EFkWCSSRJQphGlmBkKWjhf7mVqXM6p/v6dkzF8srDec73nvO+73NevnNUISZyhBDn5kmOKhAFQOG/9PvHCw9Vdhdmvf5eOCHEf/m/9QWqDOY8O4YCNA9OUOsewxsIzlkTejhLIBDIt2mssRkpTrZSstVGpD5IUAQ0hJgt0wShxqLGX2wq62Ttkw7WPJbINclqYJmxheK3eymum+TWu8O8737E1KEJPnpGKe/ykemykLzYiFBUxlEQsioEikBRVeIXbmZdTDr1PaUMjPbKLGiCgYCgxxekqttPUbKNp7vsJEbqpULRihxmFyfWlbDNeZpmdzUj44P4x71aThOkOCJIWWzgy0CA7DceEqPDebjTQbRBxRbhJGP1dYz6aMqaL8gN7cNl3Y7dsmJGEKYq3E+N4Vmag4tJCxgLBoky6LCEScIXEaaLACHYn3hJTnKbAysvT0+nahp5CQ3rCNdR2jZEfr2HRo+PBreX6u4hPriH+eo10TTgxGZKmG6WbZN7EAo0pCXOrGdZpI7qnmFafvup6BimdTBAg2eE8vYh5A+mlU5dtAk+/XhOfVcpXf0vOeVSOJbgJWulyr5YP/nrg6THTXAw1su15AXo8TA81s9oYFBzaIKfvnYs4TZ6vZ+partBZetVajvv0eR+QU3HXeo6H1D97SYVLVfkV3hFTfsd+nytM4KNSzNYZd/NFudJUpdnk7YilxRnJhuWHCE1/gwpccfZkXCWPYnncdlTsZqcxEYlzQjMBpu8UTAbrEQZY1hkiifSYCciLBqLzJklNtNyLV5ojGXT0qOoik72IFeUPBnlzpO8PwAAAP//uTGgmAAAAAZJREFUAwBhNi88KG0mwAAAAABJRU5ErkJggg==">
+  <link rel="apple-touch-icon" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACoUlEQVR4AZySXUhTYRiAn3M259ym1taaka6UXEQ/RhRpEVaU/VldBHZRIYUk1KWZEeVFdyaZQV1IRV0EFkWCSSRJQphGlmBkKWjhf7mVqXM6p/v6dkzF8srDec73nvO+73NevnNUISZyhBDn5kmOKhAFQOG/9PvHCw9Vdhdmvf5eOCHEf/m/9QWqDOY8O4YCNA9OUOsewxsIzlkTejhLIBDIt2mssRkpTrZSstVGpD5IUAQ0hJgt0wShxqLGX2wq62Ttkw7WPJbINclqYJmxheK3eymum+TWu8O8737E1KEJPnpGKe/ykemykLzYiFBUxlEQsioEikBRVeIXbmZdTDr1PaUMjPbKLGiCgYCgxxekqttPUbKNp7vsJEbqpULRihxmFyfWlbDNeZpmdzUj44P4x71aThOkOCJIWWzgy0CA7DceEqPDebjTQbRBxRbhJGP1dYz6aMqaL8gN7cNl3Y7dsmJGEKYq3E+N4Vmag4tJCxgLBoky6LCEScIXEaaLACHYn3hJTnKbAysvT0+nahp5CQ3rCNdR2jZEfr2HRo+PBreX6u4hPriH+eo10TTgxGZKmG6WbZN7EAo0pCXOrGdZpI7qnmFafvup6BimdTBAg2eE8vYh5A+mlU5dtAk+/XhOfVcpXf0vOeVSOJbgJWulyr5YP/nrg6THTXAw1su15AXo8TA81s9oYFBzaIKfvnYs4TZ6vZ+partBZetVajvv0eR+QU3HXeo6H1D97SYVLVfkV3hFTfsd+nytM4KNSzNYZd/NFudJUpdnk7YilxRnJhuWHCE1/gwpccfZkXCWPYnncdlTsZqcxEYlzQjMBpu8UTAbrEQZY1hkiifSYCciLBqLzJklNtNyLV5ojGXT0qOoik72IFeUPBnlzpO8PwAAAP//uTGgmAAAAAZJREFUAwBhNi88KG0mwAAAAABJRU5ErkJggg==">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Open Graph / SEO -->
+  <meta property="og:site_name" content="Mexxa Pharmacy">
+  <meta property="og:title" content="Mexxa Pharmacy">
+  <meta name="description" content="Quality medicines and healthcare at affordable prices. Visit Mexxa Pharmacy in Kitintale or Kitetika. Order on WhatsApp now!">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Mexxa Pharmacy",
+    "alternateName": "Mexxa",
+    "url": "https://mexxa10.github.io/"
+  }
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f4f8fb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0a7cff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 40px;
+      margin-bottom: 5px;
+    }
+
+    nav {
+      background: #055ec7;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #dbe9ff;
+    }
+
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background: white;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #0a7cff;
+    }
+
+    .hero p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 0;
+    }
+
+    .info-section {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .info-section h2 {
+      margin-bottom: 20px;
+      color: #0a7cff;
+    }
+
+    .location-box {
+      background: #f0f6ff;
+      padding: 15px;
+      border-left: 5px solid #0a7cff;
+      margin-bottom: 15px;
+      border-radius: 5px;
+    }
+
+    .search-box {
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-box input {
+      width: 100%;
+      max-width: 500px;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .ai-section p.ai-intro {
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .ai-input-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ai-input-row input {
+      flex: 1;
+      min-width: 200px;
+      margin: 10px 0;
+    }
+
+    .ai-section button {
+      width: auto;
+      padding: 14px 30px;
+    }
+
+    .ai-terms-box {
+      background: #fff8e1;
+      border-left: 5px solid #f5a623;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #5c4400;
+    }
+
+    .ai-terms-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .ai-terms-check input[type="checkbox"] {
+      width: auto;
+      margin: 3px 0 0 0;
+      flex-shrink: 0;
+    }
+
+    .ai-terms-check label {
+      font-size: 14px;
+      color: #444;
+    }
+
+    .ai-section button:disabled {
+      background: #b8c4d0;
+      cursor: not-allowed;
+    }
+
+    .ai-result {
+      margin-top: 15px;
+    }
+
+    .ai-answer-box {
+      background: #f0f6ff;
+      border-left: 5px solid #0a7cff;
+      padding: 15px;
+      border-radius: 5px;
+      white-space: pre-wrap;
+    }
+
+    .ai-error-box {
+      background: #ffe8e8;
+      border-left: 5px solid #e53935;
+      color: #b30000;
+      padding: 15px;
+      border-radius: 5px;
+    }
+
+    .ai-disclaimer {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    .ai-loading {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .ai-spinner {
+      width: 30px;
+      height: 30px;
+      border: 4px solid #dbe9ff;
+      border-top: 4px solid #0a7cff;
+      border-radius: 50%;
+      margin: auto;
+      animation: spin 1s linear infinite;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: contain;
+      background: #fff;
+      padding: 0;
+      display: block;
+      image-rendering: auto;
+      border-bottom: 1px solid #eee;
+    }
+
+    .product-info {
+      padding: 15px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-info h3 {
+      margin-bottom: 10px;
+      color: #0a7cff;
+      font-size: 20px;
+    }
+
+    .price {
+      color: green;
+      font-size: 22px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .stock {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      width: fit-content;
+    }
+
+    .product-info p {
+      margin-bottom: 10px;
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      margin-top: auto;
+      background: #25d366;
+      color: white;
+      text-decoration: none;
+      padding: 12px 15px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .whatsapp-btn:hover {
+      background: #1ebc59;
+    }
+
+    .login-box,
+    .admin-section {
+      background: white;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      background: #0a7cff;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #055ec7;
+    }
+
+    #adminPanel {
+      display: none;
+    }
+
+    footer {
+      background: #055ec7;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 30px;
+      }
+
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px;
+      }
+
+      .product-card img {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Mexxa Pharmacy</h1>
+    <p>Your Trusted Health Partner</p>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#productsSection">Products</a>
+    <a href="#aiChecker">Dosage Helper</a>
+    <a href="#locations">Locations</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <h2>Welcome to Mexxa Pharmacy</h2>
+    <p>Quality Medicines • Healthcare • Wellness</p>
+    <a class="whatsapp-btn" href="https://wa.me/256761545095" target="_blank">
+      Order on WhatsApp
+    </a>
+  </section>
+
+  <div class="container">
+
+    <!-- LOCATIONS -->
+    <section class="info-section" id="locations">
+      <h2>Our Locations</h2>
+
+      <div class="location-box">
+        <strong>📍 HW Mall Kitintale</strong><br>
+        Opposite UMEME Offices<br><br>
+        📞 0761 545 095<br>
+        ☎️ 0779 449 127
+      </div>
+
+      <div class="location-box">
+        <strong>📍 Shell Kitetika</strong><br>
+        Opposite Kumbuzi on Gayaza Road<br><br>
+        📞 0766 528 078<br>
+        ☎️ 0779 448 127
+      </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section id="productsSection">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search medicines...">
+      </div>
+      <div class="products" id="productList"></div>
+    </section>
+
+    <!-- AI PRESCRIPTION & DOSAGE CHECKER -->
+    <section class="info-section ai-section" id="aiChecker">
+      <h2>💊 Prescription & Dosage Helper</h2>
+      <p class="ai-intro">
+        Enter a medicine name (and optional patient details like age, weight, or condition) to get
+        general dosage and usage guidance from our AI assistant.
+      </p>
+
+      <div class="ai-terms-box">
+        <strong>⚠️ Disclaimer:</strong> This AI assistant is <strong>not a doctor</strong> and does not provide
+        a medical diagnosis. Its responses are generated from gathered data and general information only and may
+        be incomplete or incorrect. <strong>Mexxa Pharmacy will not be held responsible for any prescription,
+        dosage, or treatment decision</strong> made based on this tool. Please consult a qualified doctor or
+        pharmacist before taking any medication.
+      </div>
+
+      <div class="ai-terms-check">
+        <input type="checkbox" id="aiTermsCheckbox">
+        <label for="aiTermsCheckbox">I have read and accept these terms.</label>
+      </div>
+
+      <div class="ai-input-row">
+        <input type="text" id="aiMedicineName" placeholder="Medicine name (e.g. Paracetamol)">
+        <input type="text" id="aiPatientInfo" placeholder="Age / weight / condition (optional)">
+      </div>
+
+      <button id="aiAskBtn" disabled>Ask AI Assistant</button>
+
+      <div class="ai-result" id="aiResult" style="display:none;"></div>
+    </section>
+
+    <!-- ADMIN LOGIN -->
+    <div class="login-box">
+      <h2>Admin Login</h2>
+      <input type="password" id="password" placeholder="Enter Admin Password">
+      <button id="loginBtn">Login</button>
+    </div>
+
+    <!-- ADMIN PANEL -->
+    <div class="admin-section" id="adminPanel">
+      <h2>Add New Product</h2>
+
+      <input type="text" id="newName" placeholder="Product Name">
+      <input type="text" id="newPrice" placeholder="Price">
+      <textarea id="newDescription" placeholder="Description"></textarea>
+      <input type="text" id="newCategory" placeholder="Category">
+
+      <select id="newStock">
+        <option value="In Stock">In Stock</option>
+        <option value="Out of Stock">Out of Stock</option>
+      </select>
+
+      <input type="text" id="newImage" placeholder="Image Link (URL)">
+
+      <button id="addBtn">Copy to Sheet</button>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <p>© 2026 Mexxa Pharmacy. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Google Sheet URL (Public Visualization API)
+    const SHEET_URL = "https://docs.google.com/spreadsheets/d/1gYhoQr4vytvW8Kv3ZZ6N7_ndmmav_WbGeRSukNa8J6Q/gviz/tq?tqx=out:json";
+
+    let products = [];
+
+    // Load products from Google Sheet
+    async function loadProducts() {
+      const container = document.getElementById("productList");
+
+      // Loading spinner
+      container.innerHTML = `
+        <div style="text-align:center; padding:50px; grid-column:1/-1;">
+          <div style="
+            width:40px; height:40px;
+            border:4px solid #dbe9ff;
+            border-top:4px solid #0a7cff;
+            border-radius:50%;
+            margin:auto;
+            animation:spin 1s linear infinite;
+          "></div>
+        </div>
+      `;
+
+      try {
+        const response = await fetch(SHEET_URL + "&t=" + Date.now());
+        const text = await response.text();
+
+        // Extract JSON from Google Visualization response
+        const jsonText = text.substring(
+          text.indexOf('{'),
+          text.lastIndexOf('}') + 1
+        );
+
+        const data = JSON.parse(jsonText);
+
+        products = data.table.rows.map(row => ({
+          name: row.c[0]?.v || "Unknown",
+          price: row.c[1]?.v || "UGX 0",
+          description: row.c[2]?.v || "",
+          category: row.c[3]?.v || "General",
+          stock: row.c[4]?.v || "In Stock",
+          image: row.c[5]?.v || ""
+        })).filter(product => product.name);
+
+        renderProducts();
+
+      } catch (error) {
+        container.innerHTML = `
+          <p style="color:red; text-align:center; padding:50px; grid-column:1/-1;">
+            Could not load products. Please try again later.
+          </p>
+        `;
+        console.error("Failed to load products:", error);
+      }
+    }
+
+    // Render product cards
+    function renderProducts(filter = "") {
+      const container = document.getElementById("productList");
+      container.innerHTML = "";
+
+      const filtered = products.filter(product =>
+        product.name.toLowerCase().includes(filter.toLowerCase()) ||
+        product.category.toLowerCase().includes(filter.toLowerCase())
+      );
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <p style="text-align:center; grid-column:1/-1;">
+            No products found.
+          </p>
+        `;
+        return;
+      }
+
+      filtered.forEach(product => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+
+        card.innerHTML = `
+          <img 
+            src="${product.image}" 
+            alt="${product.name}"
+            loading="lazy"
+            decoding="async"
+            onerror="this.onerror=null; this.src='https://via.placeholder.com/500x500.png?text=${encodeURIComponent(product.name)}';"
+          >
+          <div class="product-info">
+            <h3>${product.name}</h3>
+            
+            <div class="price">${product.price}</div>
+            
+            <div class="stock" style="
+              background: ${product.stock === 'Out of Stock' ? '#ffe8e8' : '#e8fbe8'};
+              color: ${product.stock === 'Out of Stock' ? 'red' : 'green'};
+            ">
+              ${product.stock}
+            </div>
+
+            <p><strong>Category:</strong> ${product.category}</p>
+            <p>${product.description}</p>
+
+            <a 
+              href="https://wa.me/256761545095?text=${encodeURIComponent(`Hello Mexxa Pharmacy, I want to order ${product.name}`)}" 
+              target="_blank" 
+              class="whatsapp-btn"
+            >
+              Order Now
+            </a>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    // Admin Login
+    document.getElementById("loginBtn").addEventListener("click", () => {
+      const password = document.getElementById("password").value;
+
+      if (password === "Mexxa2026") {
+        document.getElementById("adminPanel").style.display = "block";
+      } else {
+        alert("Wrong Password");
+      }
+    });
+
+    // Add Product - Copy to clipboard for Google Sheets
+    document.getElementById("addBtn").addEventListener("click", () => {
+      const name = document.getElementById("newName").value.trim();
+      const price = document.getElementById("newPrice").value.trim();
+      const description = document.getElementById("newDescription").value.trim();
+      const category = document.getElementById("newCategory").value.trim();
+      const stock = document.getElementById("newStock").value;
+      const image = document.getElementById("newImage").value.trim();
+
+      if (!name || !price || !category) {
+        alert("Please fill in Name, Price, and Category");
+        return;
+      }
+
+      const rowText = `${name}\t${price}\t${description}\t${category}\t${stock}\t${image}`;
+
+      navigator.clipboard.writeText(rowText).then(() => {
+        alert("✅ Copied! Paste this row into your Google Sheet.");
+        
+        // Clear form
+        document.getElementById("newName").value = "";
+        document.getElementById("newPrice").value = "";
+        document.getElementById("newDescription").value = "";
+        document.getElementById("newCategory").value = "";
+        document.getElementById("newImage").value = "";
+      }).catch(() => {
+        alert("Failed to copy. Please copy manually:\n\n" + rowText);
+      });
+    });
+
+    // Search functionality
+    document.getElementById("searchInput").addEventListener("input", (e) => {
+      renderProducts(e.target.value);
+    });
+
+    // ===== AI Prescription & Dosage Helper =====
+    // Google Apps Script endpoint that returns AI-generated dosage/prescription guidance
+    const AI_DOSAGE_API = "https://script.google.com/macros/s/AKfycbz3rSNJpawa1WlezHGh4rlG9tU5FVMo4pGg9QYZ2zc0j__AE5BN1yCONb32NaO2kv2U/exec";
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+    }
+
+    document.getElementById("aiTermsCheckbox").addEventListener("change", (e) => {
+      document.getElementById("aiAskBtn").disabled = !e.target.checked;
+    });
+
+    document.getElementById("aiAskBtn").addEventListener("click", async () => {
+      const termsAccepted = document.getElementById("aiTermsCheckbox").checked;
+      if (!termsAccepted) {
+        alert("Please read and accept the disclaimer before using this tool.");
+        return;
+      }
+
+      const medicine = document.getElementById("aiMedicineName").value.trim();
+      const info = document.getElementById("aiPatientInfo").value.trim();
+      const resultBox = document.getElementById("aiResult");
+
+      if (!medicine) {
+        alert("Please enter a medicine name.");
+        return;
+      }
+
+      let prompt = `Provide general prescription and dosage guidance for "${medicine}".`;
+      if (info) {
+        prompt += ` Patient details: ${info}.`;
+      }
+      prompt += " Keep the answer short, clear and safe, and remind the reader to confirm with a pharmacist or doctor before use.";
+
+      resultBox.style.display = "block";
+      resultBox.innerHTML = `
+        <div class="ai-loading">
+          <div class="ai-spinner"></div>
+          <p style="margin-top:10px;">Asking AI assistant...</p>
+        </div>
+      `;
+
+      try {
+        const url = `${AI_DOSAGE_API}?prompt=${encodeURIComponent(prompt)}`;
+        const response = await fetch(url);
+        const raw = await response.text();
+
+        let answer = null;
+        try {
+          const data = JSON.parse(raw);
+          answer = data.result || data.response || data.text || data.answer ||
+                   data.output || data.message || data.reply || data.content;
+          if (!answer) answer = JSON.stringify(data);
+        } catch (parseErr) {
+          answer = raw;
+        }
+
+        if (!answer || !String(answer).trim()) {
+          throw new Error("Empty response from AI assistant.");
+        }
+
+        const formatted = escapeHtml(answer).replace(/\n/g, "<br>");
+
+        resultBox.innerHTML = `
+          <div class="ai-answer-box">${formatted}</div>
+          <p class="ai-disclaimer">
+            ⚠️ AI-generated guidance for general information only. Always confirm with a licensed pharmacist or doctor before taking any medication.
+          </p>
+        `;
+
+      } catch (error) {
+        resultBox.innerHTML = `
+          <div class="ai-error-box">
+            Could not get a response from the AI assistant. Please check your connection and try again.<br>
+            <small>Details: ${escapeHtml(error.message || error)}</small>
+          </div>
+        `;
+        console.error("AI dosage request failed:", error);
+      }
+    });
+
+    // Load products on page load
+    window.onload = loadProducts;
+  </script>
+
+</body>
+</html>
