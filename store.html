@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Store — Mexxa Pharmacy | All Medicines & Products</title>
+
+  <link rel="canonical" href="https://mexas10.github.io/Mexxapharmarcy-/store.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://docs.google.com">
+  <link rel="dns-prefetch" href="https://wa.me">
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/mexas10/Mexxapharmarcy-/main/android-chrome-192x192.png">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/mexas10/Mexxapharmarcy-/main/android-chrome-192x192.png">
+
+  <meta name="description" content="Browse the full range of medicines and healthcare products at Mexxa Pharmacy, Kampala. Search, filter by category, and order instantly on WhatsApp.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0f2a6e">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mexxa Pharmacy">
+  <meta property="og:title" content="Store — Mexxa Pharmacy">
+  <meta property="og:description" content="Browse the full range of medicines and healthcare products.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/mexas10/Mexxapharmarcy-/main/android-chrome-192x192.png">
+
+<style>
+  /* ─── TOKENS ─────────────────────────────── */
+  :root {
+    --blue:        #1a4fd6;
+    --blue-mid:    #2458e8;
+    --blue-dark:   #0f2a6e;
+    --blue-deeper: #091a4a;
+    --blue-light:  #eef4ff;
+    --sky:         #0369a1;
+    --teal:        #0e7490;
+    --cyan:        #06b6d4;
+    --green:       #15803d;
+    --green-wa:    #20b954;
+    --red:         #dc2626;
+    --amber:       #d97706;
+    --bg:          #f4f6fb;
+    --surface:     #ffffff;
+    --surface-2:   #f8fafd;
+    --border:      #e2e8f2;
+    --text:        #080f20;
+    --muted:       #4f6070;
+    --radius-sm:  10px;
+    --radius:     18px;
+    --radius-lg:  24px;
+    --shadow-xs:  0 1px 2px rgba(10,30,90,.04);
+    --shadow-sm:  0 1px 3px rgba(10,30,90,.05), 0 2px 8px rgba(10,30,90,.04);
+    --shadow:     0 2px 6px rgba(10,30,90,.05), 0 8px 28px rgba(10,30,90,.07);
+    --shadow-lg:  0 4px 14px rgba(10,30,90,.07), 0 20px 50px rgba(10,30,90,.11);
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; font-size:16px; -webkit-text-size-adjust:100%; text-size-adjust:100%; overflow-x:hidden; }
+  html, body { max-width:100%; }
+
+  body {
+    overflow-x:hidden;
+    font-family:'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse 80% 40% at 50% 0%, rgba(26,79,214,.05) 0%, transparent 70%);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img { max-width:100%; }
+  h1,h2,h3,h4 { font-family:'Plus Jakarta Sans', sans-serif; line-height:1.25; }
+  a { color: inherit; }
+
+  /* ─── HEADER ─────────────────────────────── */
+  header {
+    background:linear-gradient(135deg, #060e24 0%, #0c1a42 60%, #0f2460 100%);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(99,160,255,.12);
+    padding:0 22px;
+    padding-left:max(22px, env(safe-area-inset-left));
+    padding-right:max(22px, env(safe-area-inset-right));
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    height:72px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 1px 0 rgba(99,160,255,.08), 0 8px 32px rgba(4,10,30,.4);
+  }
+
+  .header-brand { display:flex; align-items:center; gap:12px; text-decoration:none; flex:1; min-width:0; }
+
+  .header-logo {
+    width:44px; height:44px; border-radius:12px; object-fit:contain;
+    background:#fff; padding:4px; box-sizing:border-box;
+    border:1.5px solid rgba(99,160,255,.25);
+    box-shadow:0 0 0 3px rgba(99,160,255,.08), 0 4px 16px rgba(0,0,0,.3);
+    flex-shrink:0;
+  }
+
+  .brand-name {
+    font-family:'Plus Jakarta Sans', sans-serif; font-size:17px; font-weight:800;
+    color:#fff; letter-spacing:-0.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .brand-tag {
+    font-size:10.5px; color:rgba(125,211,252,.65); font-weight:600;
+    display:block; margin-top:-1px; letter-spacing:.3px; white-space:nowrap;
+  }
+
+  .hamburger {
+    display:flex; flex-direction:column; justify-content:center; gap:5px;
+    width:42px; height:42px; background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.14); border-radius:11px; cursor:pointer;
+    padding:0 11px; flex-shrink:0; transition:background .2s, border-color .2s, transform .15s; z-index:1001;
+  }
+  .hamburger:hover { background:rgba(99,160,255,.15); border-color:rgba(99,160,255,.3); }
+  .hamburger:active { transform:scale(.92); }
+  .hamburger span { display:block; width:100%; height:2px; background:#fff; border-radius:2px; transition:transform .32s cubic-bezier(.4,0,.2,1), opacity .25s ease; }
+  .hamburger span:nth-child(1) { width:100%; }
+  .hamburger span:nth-child(2) { width:75%; }
+  .hamburger span:nth-child(3) { width:55%; }
+  .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); width:100%; }
+  .hamburger.open span:nth-child(2) { opacity:0; }
+  .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); width:100%; }
+
+  .nav-overlay {
+    display:block; position:fixed; inset:0; background:rgba(4,10,30,.7);
+    backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+    z-index:998; opacity:0; pointer-events:none; transition:opacity .32s;
+  }
+  .nav-overlay.open { opacity:1; pointer-events:auto; }
+
+  .nav-drawer {
+    position:fixed; top:0; right:0; width:272px; height:100%;
+    background:linear-gradient(160deg, #080f26 0%, #0c1a44 50%, #0a172e 100%);
+    border-left:1px solid rgba(99,160,255,.1); z-index:999;
+    transform:translateX(calc(100% + 20px));
+    transition:transform .34s cubic-bezier(.4,0,.2,1);
+    padding-top:88px; display:flex; flex-direction:column; overflow-y:auto;
+    box-shadow:-16px 0 48px rgba(0,0,0,.55);
+  }
+  .nav-drawer.open { transform:translateX(0); }
+  .nav-drawer-brand {
+    padding:0 24px 20px; border-bottom:1px solid rgba(99,160,255,.08); margin-bottom:8px;
+    font-family:'Plus Jakarta Sans', sans-serif; font-size:13px; font-weight:700;
+    color:rgba(125,211,252,.5); letter-spacing:.8px; text-transform:uppercase;
+  }
+  .nav-drawer a {
+    display:flex; align-items:center; gap:13px; padding:14px 24px;
+    color:rgba(255,255,255,.65); text-decoration:none; font-size:14.5px; font-weight:600;
+    border-left:3px solid transparent; transition:background .15s, color .15s, border-color .2s;
+    font-family:'Plus Jakarta Sans', sans-serif; letter-spacing:.1px;
+  }
+  .nav-drawer a:hover { background:rgba(99,160,255,.08); color:#fff; border-left-color:rgba(99,160,255,.6); }
+  .nav-drawer a .nav-icon {
+    width:32px; height:32px; background:rgba(99,160,255,.08); border:1px solid rgba(99,160,255,.12);
+    border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:15px;
+    flex-shrink:0; transition:background .15s;
+  }
+  .nav-drawer a:hover .nav-icon { background:rgba(99,160,255,.16); }
+  .nav-drawer-footer {
+    margin-top:auto; padding:20px 24px; border-top:1px solid rgba(255,255,255,.05);
+    font-size:11px; color:rgba(255,255,255,.18); font-family:'Plus Jakarta Sans', sans-serif; letter-spacing:.3px;
+  }
+
+  /* ─── WHATSAPP FAB ───────────────────────── */
+  .wa-fab {
+    position:fixed; right:max(20px, env(safe-area-inset-right)); bottom:max(20px, env(safe-area-inset-bottom));
+    width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg, #16a34a 0%, #15803d 100%); color:#fff; text-decoration:none;
+    box-shadow:0 4px 18px rgba(22,163,74,.45), 0 2px 6px rgba(0,0,0,.2);
+    border:1px solid rgba(255,255,255,.15); z-index:900;
+    transition:transform .2s, box-shadow .2s; animation:wa-fab-pulse 2.6s ease-in-out infinite;
+  }
+  .wa-fab:hover { transform:scale(1.07); box-shadow:0 6px 24px rgba(22,163,74,.6), 0 2px 6px rgba(0,0,0,.25); }
+  @keyframes wa-fab-pulse {
+    0%, 100% { box-shadow:0 4px 18px rgba(22,163,74,.45), 0 2px 6px rgba(0,0,0,.2), 0 0 0 0 rgba(22,163,74,.4); }
+    50% { box-shadow:0 4px 18px rgba(22,163,74,.45), 0 2px 6px rgba(0,0,0,.2), 0 0 0 10px rgba(22,163,74,0); }
+  }
+  @media (max-width:640px) { .wa-fab { width:50px; height:50px; right:16px; bottom:16px; } }
+
+  /* ─── BREADCRUMB ─────────────────────────── */
+  .back-bar { max-width:1160px; margin:0 auto; padding:18px 18px 0; }
+  .breadcrumb {
+    display:flex; align-items:center; flex-wrap:wrap; gap:6px;
+    font-family:'Plus Jakarta Sans', sans-serif; font-size:12.5px; font-weight:600;
+  }
+  .breadcrumb a { color:var(--muted); text-decoration:none; transition:color .15s; }
+  .breadcrumb a:hover { color:var(--blue); }
+  .breadcrumb .sep { color:#c3cede; }
+  .breadcrumb .current { color:var(--blue); font-weight:700; }
+
+  /* ─── PAGE HEAD ──────────────────────────── */
+  .store-hero {
+    max-width:1160px; margin:0 auto; padding:18px 18px 0;
+  }
+  .store-hero h1 {
+    font-size:26px; font-weight:900; letter-spacing:-.6px; margin-bottom:6px;
+    background:linear-gradient(100deg, var(--blue-dark) 0%, var(--blue) 55%, var(--sky) 100%);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  }
+  .store-hero p { font-size:13.5px; color:var(--muted); font-weight:500; }
+
+  /* ─── CONTAINER ──────────────────────────── */
+  .container { max-width:1160px; margin:0 auto; padding:20px 18px 48px; isolation:isolate; }
+
+  .panel {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(26,79,214,.08);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 2px 8px rgba(10,30,90,.04), 0 10px 32px rgba(10,30,90,.07);
+    overflow: hidden;
+  }
+  .panel-body { padding: 20px 24px 24px; }
+
+  /* ─── SEARCH ─────────────────────────────── */
+  .search-wrap { position:relative; margin-bottom:16px; filter: drop-shadow(0 4px 16px rgba(26,86,219,.13)); }
+  .search-icon { position:absolute; left:18px; top:50%; transform:translateY(-50%); color:var(--blue); pointer-events:none; z-index:1; }
+  #searchInput {
+    width:100%; padding:16px 20px 16px 52px; border:1.5px solid rgba(26,79,214,.2); border-radius:50px;
+    font-size:15px; font-family:inherit; background:#fff; color:var(--text); outline:none;
+    transition:border-color .2s, box-shadow .2s, background .2s; margin:0; font-weight:500;
+    letter-spacing:-.01em; box-shadow: 0 2px 12px rgba(10,30,90,.05);
+  }
+  #searchInput::placeholder { color:#94a3b8; font-weight:400; }
+  #searchInput:focus { border-color:var(--blue); box-shadow: 0 0 0 4px rgba(26,79,214,.10), 0 2px 12px rgba(10,30,90,.06); background:#fff; }
+
+  /* ─── CATEGORY FILTER CHIPS ──────────────── */
+  .cat-filter-row {
+    display:flex; gap:8px; overflow-x:auto; padding-bottom:6px; margin-bottom:22px;
+    scrollbar-width:none; touch-action:pan-x;
+  }
+  .cat-filter-row::-webkit-scrollbar { display:none; }
+  .cat-chip {
+    flex-shrink:0; font-family:'Plus Jakarta Sans', sans-serif; font-size:12.5px; font-weight:700;
+    padding:9px 16px; border-radius:50px; border:1.5px solid rgba(26,79,214,.15);
+    background:#fff; color:var(--muted); cursor:pointer; transition:all .18s; white-space:nowrap;
+  }
+  .cat-chip:hover { border-color:rgba(26,79,214,.35); color:var(--blue); }
+  .cat-chip.active {
+    background:linear-gradient(135deg, var(--blue), var(--sky));
+    color:#fff; border-color:transparent; box-shadow:0 4px 12px rgba(26,79,214,.3);
+  }
+
+  /* ─── PRODUCTS GRID ──────────────────────── */
+  .products-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:20px; }
+
+  .see-more-btn {
+    display:flex; align-items:center; justify-content:center; gap:8px; width:100%; margin-top:22px;
+    padding:14px 20px; background:linear-gradient(135deg, var(--blue-light) 0%, #eef4ff 100%);
+    border:1.5px solid rgba(26,79,214,.16); border-radius:14px; color:var(--blue);
+    font-family:'Plus Jakarta Sans', sans-serif; font-size:14px; font-weight:800; cursor:pointer;
+    transition:background .2s, transform .2s, box-shadow .2s;
+  }
+  .see-more-btn:hover { background:linear-gradient(135deg, #e4edff 0%, #ddeaff 100%); transform:translateY(-2px); box-shadow:0 6px 18px rgba(26,79,214,.14); }
+  .see-more-btn:active { transform:translateY(0); }
+
+  .product-card {
+    background:#fff; border-radius:22px; border:1px solid rgba(15,40,100,.07);
+    box-shadow: 0 1px 0 rgba(255,255,255,1) inset, 0 1px 2px rgba(15,40,100,.04), 0 4px 12px rgba(15,40,100,.06);
+    display:flex; flex-direction:column; overflow:hidden;
+    transition: transform .4s cubic-bezier(.2,0,0,1), box-shadow .4s cubic-bezier(.2,0,0,1), border-color .3s;
+    position:relative; cursor:pointer;
+  }
+  .product-card::after {
+    content:''; position:absolute; inset:0;
+    background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.22) 50%, transparent 60%);
+    background-size:250% 100%; background-position:250% center; transition:background-position .55s ease;
+    border-radius:22px; z-index:10; pointer-events:none;
+  }
+  .product-card:hover::after { background-position:-50% center; }
+  .product-card::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:3px;
+    background: linear-gradient(90deg, #0f2a6e 0%, #1a4fd6 45%, #38bdf8 100%);
+    opacity:0; transition:opacity .4s; z-index:11; border-radius:22px 22px 0 0;
+  }
+  .product-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 1px 0 rgba(255,255,255,1) inset, 0 2px 4px rgba(15,40,100,.04), 0 12px 28px rgba(15,40,100,.10), 0 28px 56px rgba(15,40,100,.14);
+    border-color: rgba(26,79,214,.18);
+  }
+  .product-card:hover::before { opacity:1; }
+
+  .product-img-wrap {
+    height:200px; background: radial-gradient(ellipse at 65% 38%, #ddeaff 0%, #eef3ff 50%, #e2ecff 100%);
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+    border-bottom:1px solid rgba(26,79,214,.05); padding:16px; position:relative;
+  }
+  .product-img-wrap::after {
+    content:''; position:absolute; inset:0;
+    background: radial-gradient(ellipse at center, transparent 45%, rgba(120,160,230,.13) 100%);
+    z-index:2; pointer-events:none;
+  }
+  .product-img-wrap::before {
+    content:''; position:absolute; inset:-24px; background-image:var(--thumb);
+    background-size:cover; background-position:center; filter: blur(22px) brightness(.82) saturate(1.2);
+    opacity:0; z-index:0;
+  }
+  .product-img-wrap.has-img::before { opacity:1; }
+  .product-img-wrap.has-img::after { display:none; }
+  .product-img-wrap img {
+    position:relative; z-index:1; max-width:100%; max-height:100%; object-fit:contain;
+    transition: transform .45s cubic-bezier(.2,0,0,1);
+    filter: drop-shadow(0 4px 10px rgba(15,40,100,.16)) drop-shadow(0 1px 2px rgba(15,40,100,.08));
+  }
+  .product-card:hover .product-img-wrap img { transform: scale(1.10) translateY(-3px); }
+
+  .product-body { padding:16px 17px 18px; flex:1; display:flex; flex-direction:column; }
+  .product-cat {
+    display:inline-flex; align-items:center; font-size:9.5px; font-weight:800; color:var(--blue);
+    text-transform:uppercase; letter-spacing:1px;
+    background: linear-gradient(135deg, rgba(26,79,214,.08), rgba(56,189,248,.06));
+    border:1px solid rgba(26,79,214,.13); border-radius:50px; padding:3px 10px; width:fit-content; margin-bottom:10px;
+  }
+  .product-name { font-family:'Plus Jakarta Sans', sans-serif; font-size:15px; font-weight:800; color:#080f20; line-height:1.28; margin-bottom:7px; letter-spacing:-.25px; }
+  .product-price {
+    font-family:'Plus Jakarta Sans', sans-serif; font-size:23px; font-weight:900;
+    background: linear-gradient(110deg, #0f2a6e 0%, #1a4fd6 55%, #0ea5e9 100%);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    margin-bottom:9px; letter-spacing:-.6px; line-height:1;
+  }
+  .stock-pill { display:inline-flex; align-items:center; gap:5px; padding:4px 11px; border-radius:50px; font-size:10.5px; font-weight:700; width:fit-content; margin-bottom:9px; letter-spacing:.1px; }
+  .stock-pill.in { background: linear-gradient(135deg, #f0fdf4, #dcfce7); color:#15803d; border:1px solid rgba(21,128,61,.2); }
+  .stock-pill.out { background: linear-gradient(135deg, #fff1f2, #ffe4e6); color:#be123c; border:1px solid rgba(190,18,60,.2); }
+  .product-desc { font-size:12px; color:#5a6a80; line-height:1.65; flex:1; margin-bottom:15px; }
+
+  .wa-order-btn {
+    display:flex; align-items:center; justify-content:center; gap:7px;
+    background: linear-gradient(155deg, #22c55e 0%, #16a34a 60%, #15803d 100%);
+    color:#fff; text-decoration:none; font-family:'Plus Jakarta Sans', sans-serif; font-size:13px; font-weight:800;
+    padding:13px 16px; border-radius:14px; transition: filter .2s, transform .2s, box-shadow .2s;
+    box-shadow: 0 1px 0 rgba(255,255,255,.2) inset, 0 4px 12px rgba(22,163,74,.28), 0 1px 2px rgba(22,163,74,.15);
+    letter-spacing:.02em; position:relative; overflow:hidden;
+  }
+  .wa-order-btn:hover { filter:brightness(1.07); transform:translateY(-2px); }
+  .wa-order-btn:active { transform:translateY(0); filter:brightness(.96); }
+
+  @media (hover:none) {
+    .product-card:hover { transform:none !important; box-shadow: 0 1px 0 rgba(255,255,255,1) inset, 0 1px 2px rgba(15,40,100,.04), 0 4px 12px rgba(15,40,100,.06) !important; }
+    .product-card:hover .product-img-wrap img { transform:none !important; }
+  }
+
+  .shimmer {
+    background: linear-gradient(100deg, #eef3ff 30%, #f7faff 50%, #eef3ff 70%);
+    background-size:200% 100%; animation:shimmer 1.4s infinite; border-radius:22px; height:280px;
+  }
+  @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+  /* ─── SEARCH MORE CTA ────────────────────── */
+  .catalog-more {
+    margin-top: 26px; padding: 28px 24px; border-radius: 20px;
+    background: linear-gradient(150deg, #0f2a6e 0%, #1a4fd6 55%, #0c8fd9 100%);
+    box-shadow: 0 10px 30px rgba(15,40,100,.28); text-align:center; position:relative; overflow:hidden;
+  }
+  .catalog-more::before {
+    content:''; position:absolute; inset:0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cpath d='M28 18h8v10h10v8H36v10h-8V36H18v-8h10z' fill='white' fill-opacity='0.045'/%3E%3C/svg%3E");
+    background-size:64px 64px; pointer-events:none;
+  }
+  .catalog-more-icon {
+    width:46px; height:46px; margin:0 auto 14px; border-radius:50%;
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.25);
+    display:flex; align-items:center; justify-content:center; color:#fff; position:relative; z-index:1;
+  }
+  .catalog-more p { font-size:14px; color:#fff; margin-bottom:18px; font-weight:700; position:relative; z-index:1; letter-spacing:-.1px; }
+  .catalog-more-btn {
+    display:inline-flex; align-items:center; gap:8px;
+    background: linear-gradient(155deg, #22c55e, #15803d); color:#fff; text-decoration:none;
+    font-family:'Plus Jakarta Sans', sans-serif; font-size:13.5px; font-weight:800;
+    padding:13px 24px; border-radius:50px; box-shadow:0 6px 18px rgba(0,0,0,.25);
+    transition: transform .2s, filter .2s; position:relative; z-index:1;
+  }
+  .catalog-more-btn:hover { transform:translateY(-2px); filter:brightness(1.08); }
+
+  /* ─── FOOTER ─────────────────────────────── */
+  footer {
+    background:var(--blue-dark); color:rgba(255,255,255,.7);
+    padding:40px 20px 28px; padding-bottom:max(28px, env(safe-area-inset-bottom));
+    padding-left:max(20px, env(safe-area-inset-left)); padding-right:max(20px, env(safe-area-inset-right));
+    margin-top:40px;
+  }
+  .footer-inner {
+    max-width:1160px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr;
+    gap:32px; padding-bottom:28px; border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .footer-brand-name { font-family:'Plus Jakarta Sans', sans-serif; font-size:19px; font-weight:800; color:#fff; margin-bottom:6px; }
+  .footer-desc { font-size:13px; line-height:1.7; color:rgba(255,255,255,.6); margin-bottom:14px; }
+  .footer-wa {
+    display:inline-flex; align-items:center; gap:6px; background:var(--green-wa); color:#fff;
+    text-decoration:none; font-size:13px; font-weight:700; padding:9px 18px; border-radius:50px; transition:opacity .2s;
+  }
+  .footer-wa:hover { opacity:.85; }
+  .footer-col h4 { font-family:'Plus Jakarta Sans', sans-serif; font-size:13px; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:.6px; margin-bottom:14px; }
+  .footer-col p, .footer-col a { font-size:13px; color:rgba(255,255,255,.6); text-decoration:none; display:block; margin-bottom:8px; transition:color .2s; line-height:1.6; }
+  .footer-col a:hover { color:#fff; }
+  .footer-bottom { max-width:1160px; margin:20px auto 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; font-size:12px; color:rgba(255,255,255,.4); }
+
+  /* ─── RESPONSIVE ─────────────────────────── */
+  @media (max-width:900px) {
+    .products-grid { grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); }
+    .footer-inner { grid-template-columns:1fr 1fr; gap:24px; }
+    .footer-inner > div:first-child { grid-column:1 / -1; }
+  }
+  @media (max-width:640px) {
+    header { height:56px; padding:0 14px; }
+    .brand-name { font-size:15px; }
+    .brand-tag { display:none; }
+    .header-logo { width:34px; height:34px; border-radius:8px; }
+    #searchInput { font-size:14px; padding:12px 14px 12px 44px; }
+    .products-grid { grid-template-columns:repeat(2, 1fr); gap:14px; }
+    .product-img-wrap { height:150px; padding:10px; }
+    .product-body { padding:11px 12px 14px; }
+    .product-cat { font-size:9px; padding:2px 7px; margin-bottom:6px; }
+    .product-name { font-size:13px; margin-bottom:4px; }
+    .product-price { font-size:17px; margin-bottom:6px; }
+    .stock-pill { font-size:10px; padding:3px 8px; margin-bottom:6px; }
+    .product-desc { font-size:11.5px; margin-bottom:10px; -webkit-line-clamp:2; display:-webkit-box; -webkit-box-orient:vertical; overflow:hidden; }
+    .wa-order-btn { font-size:12px; padding:11px 10px; border-radius:12px; }
+    .wa-order-btn svg { display:none; }
+    .store-hero h1 { font-size:21px; }
+    .footer-inner { grid-template-columns:1fr; gap:20px; }
+    .footer-bottom { flex-direction:column; text-align:center; gap:6px; }
+    footer { padding:28px 16px 20px; }
+  }
+  @media (max-width:400px) {
+    .products-grid { grid-template-columns:repeat(2, 1fr); gap:10px; }
+    .product-img-wrap { height:180px; }
+    .product-body { padding:12px 14px 14px; gap:7px; }
+    .product-name { font-size:15px; }
+    .product-price { font-size:18px; }
+    .product-desc { display:block; overflow:visible; -webkit-line-clamp:unset; }
+    .wa-order-btn svg { display:inline; }
+  }
+  @media (min-width:641px) and (max-width:767px) {
+    .products-grid { grid-template-columns:repeat(2, 1fr); }
+  }
+  @media (min-width:1400px) {
+    .container { max-width:1320px; }
+    .footer-inner, .footer-bottom { max-width:1320px; }
+    .products-grid { grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ═══════════════════════════════ -->
+<header>
+  <a class="header-brand" href="index.html">
+    <img class="header-logo" src="https://raw.githubusercontent.com/mexas10/Mexxapharmarcy-/main/android-chrome-192x192.png" alt="Mexxa Pharmacy Logo" width="44" height="44" decoding="async">
+    <div>
+      <div class="brand-name">Mexxa Pharmacy</div>
+      <span class="brand-tag">Your Trusted Health Partner</span>
+    </div>
+  </a>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<a class="wa-fab" href="https://wa.me/256766528078" target="_blank" rel="noopener noreferrer" aria-label="Order on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-drawer" id="navDrawer">
+  <div class="nav-drawer-brand">Navigation</div>
+  <a href="index.html#home" class="nav-drawer-link"><span class="nav-icon">🏠</span> Home</a>
+  <a href="index.html#locations" class="nav-drawer-link"><span class="nav-icon">📍</span> Locations</a>
+  <a href="store.html" class="nav-drawer-link"><span class="nav-icon">💊</span> Store</a>
+  <a href="index.html#gallery" class="nav-drawer-link"><span class="nav-icon">📸</span> Library</a>
+  <a href="index.html#aiChecker" class="nav-drawer-link"><span class="nav-icon">🤖</span> Dosage AI</a>
+  <a href="index.html#social" class="nav-drawer-link"><span class="nav-icon">📱</span> Social</a>
+  <a href="index.html#contact" class="nav-drawer-link"><span class="nav-icon">📞</span> Contact</a>
+  <div class="nav-drawer-footer">Mexxa Pharmacy · Kampala, Uganda</div>
+</div>
+
+<div class="back-bar">
+  <div class="breadcrumb">
+    <a href="index.html#home">Home</a>
+    <span class="sep">/</span>
+    <span class="current">Store</span>
+  </div>
+</div>
+
+<div class="store-hero">
+  <h1>Our Full Store</h1>
+  <p>Browse every medicine and healthcare product we stock — search, filter by category, and order instantly on WhatsApp.</p>
+</div>
+
+<div class="container">
+  <div class="panel" id="productsSection">
+    <div class="panel-body">
+      <div class="search-wrap">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" id="searchInput" placeholder="Search medicines or categories…" autocomplete="off" aria-label="Search products" spellcheck="false">
+      </div>
+      <div class="cat-filter-row" id="catFilterRow"></div>
+      <div class="products-grid" id="productList"></div>
+      <button type="button" class="see-more-btn" id="seeMoreBtn" style="display:none;">See More Products</button>
+      <div class="catalog-more" id="catalogMore" style="display:none;">
+        <div class="catalog-more-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <p id="catalogMoreText">Can't find what you're looking for?</p>
+        <a class="catalog-more-btn" id="catalogMoreBtn" href="https://wa.me/256766528078" target="_blank" rel="noopener noreferrer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Ask us on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ═════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">Mexxa Pharmacy</div>
+      <p class="footer-desc">Quality medicines and healthcare at affordable prices. Your trusted health partner in Kampala since day one. Open daily from 7:00 AM to 11:00 PM.</p>
+      <a class="footer-wa" href="https://wa.me/256766528078" target="_blank" rel="noopener noreferrer">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+    <div class="footer-col">
+      <h4>Locations</h4>
+      <p>HW Mall, Kitintale<br>Opp. UMEME Offices</p>
+      <p>Shell Kitetika<br>Opp. Kumbuzi, Gayaza Rd</p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:mexxapharmacy@gmail.com">mexxapharmacy@gmail.com</a>
+      <a href="tel:+256761545095">0761 545 095</a>
+      <a href="tel:+256779449127">0779 449 127</a>
+      <a href="tel:+256766528078">0766 528 078</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Mexxa Pharmacy. All rights reserved.</span>
+    <span>Quality · Care · Trust • Open Daily 7AM–11PM</span>
+  </div>
+</footer>
+
+<script>
+  // URL protection — decoded at runtime, matches index.html
+  const _k = 'MexxaPharmacy2026';
+  const _d = h => h.match(/.{2}/g).map((b,i) => String.fromCharCode(parseInt(b,16) ^ _k.charCodeAt(i % _k.length))).join('');
+  const SHEET_URL = _d('25110c08126a474e1602021057555f5d512100561b0e3d4712021f04021d415857533916571c4e610f381a0230114d444946401a5d330e520a32573c5a3e0d1d5f5d534012321a3f04023b141923005b3304611d513b0c02571521571503155c0c0c460a5845220b');
+
+  const CACHE_KEY = "mexxa_products_v2";
+  const CACHE_TTL = 30 * 60 * 1000;
+  let products = [];
+  let activeCategory = "All";
+
+  const PRODUCTS_PAGE_SIZE = 12;
+  let visibleProductCount = PRODUCTS_PAGE_SIZE;
+  let lastRenderedQuery = null;
+
+  async function loadProducts() {
+    const grid = document.getElementById("productList");
+    const cached = (() => { try { return JSON.parse(localStorage.getItem(CACHE_KEY)); } catch { return null; } })();
+    const cacheAge = cached ? Date.now() - cached.ts : Infinity;
+
+    if (cached && cacheAge < CACHE_TTL) {
+      products = cached.products;
+      buildCategoryChips();
+      renderProducts();
+      const idle = window.requestIdleCallback || (fn => setTimeout(fn, 2000));
+      idle(() => fetchAndCache(false));
+      return;
+    }
+    if (cached) {
+      products = cached.products;
+      buildCategoryChips();
+      renderProducts();
+      setTimeout(() => fetchAndCache(true), 100);
+      return;
+    }
+    grid.innerHTML = Array(6).fill(`<div class="shimmer"></div>`).join('');
+    fetchAndCache(true);
+  }
+
+  async function fetchAndCache(updateUI) {
+    const grid = document.getElementById("productList");
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 8000);
+      const res = await fetch(SHEET_URL + "&cb=" + Date.now(), { signal: controller.signal });
+      clearTimeout(timeout);
+      const text = await res.text();
+      const json = JSON.parse(text.substring(text.indexOf('{'), text.lastIndexOf('}') + 1));
+      const rows = json.table.rows;
+
+      const fetched = rows
+        .filter(r => r && r.c && r.c[0]?.v)
+        .map(r => ({
+          name:        String(r.c[0]?.v || "").trim(),
+          price:       String(r.c[1]?.v || "UGX 0").trim(),
+          description: String(r.c[2]?.v || "").trim(),
+          category:    String(r.c[3]?.v || "General").trim(),
+          stock:       String(r.c[4]?.v || "In Stock").trim(),
+          image:       String(r.c[5]?.v || "").trim()
+        }))
+        .filter(p => p.name && p.name.toLowerCase() !== "unknown" && p.name.toLowerCase() !== "name")
+        .map((p, i) => ({ ...p, id: i }));
+
+      const galleryUrls = rows.map(r => (r.c[6]?.v || "").toString().trim()).filter(Boolean);
+      try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), products: fetched, galleryUrls })); } catch {}
+
+      if (updateUI) {
+        products = fetched;
+        buildCategoryChips();
+        renderProducts();
+      }
+    } catch {
+      if (updateUI && !products.length) {
+        grid.innerHTML = `<p style="grid-column:1/-1;text-align:center;color:#dc2626;padding:40px 0;">Could not load products. Please try again later.</p>`;
+      }
+    }
+  }
+
+  function buildCategoryChips() {
+    const row = document.getElementById("catFilterRow");
+    const categories = ["All", ...new Set(products.map(p => p.category).filter(Boolean))];
+    row.innerHTML = categories.map(c =>
+      `<button type="button" class="cat-chip${c === activeCategory ? " active" : ""}" data-cat="${c}">${c}</button>`
+    ).join("");
+    row.querySelectorAll(".cat-chip").forEach(chip => {
+      chip.addEventListener("click", () => {
+        activeCategory = chip.dataset.cat;
+        visibleProductCount = PRODUCTS_PAGE_SIZE;
+        row.querySelectorAll(".cat-chip").forEach(c => c.classList.remove("active"));
+        chip.classList.add("active");
+        renderProducts(document.getElementById("searchInput").value.trim());
+      });
+    });
+  }
+
+  function renderProducts(q = "") {
+    const grid = document.getElementById("productList");
+    const seeMoreBtn = document.getElementById("seeMoreBtn");
+    const filterKey = q + "|" + activeCategory;
+
+    if (filterKey !== lastRenderedQuery) {
+      visibleProductCount = PRODUCTS_PAGE_SIZE;
+      lastRenderedQuery = filterKey;
+    }
+
+    let fullList = products;
+    if (activeCategory !== "All") fullList = fullList.filter(p => p.category === activeCategory);
+    if (q) fullList = fullList.filter(p =>
+      p.name.toLowerCase().includes(q.toLowerCase()) ||
+      p.category.toLowerCase().includes(q.toLowerCase()));
+
+    const list = fullList.slice(0, visibleProductCount);
+    grid.innerHTML = "";
+
+    if (!fullList.length) {
+      const empty = document.createElement("p");
+      empty.style.cssText = "grid-column:1/-1;text-align:center;color:#64748b;padding:32px 0;";
+      empty.textContent = q ? `No products found matching "${q}".` : "No products in this category.";
+      grid.appendChild(empty);
+      seeMoreBtn.style.display = "none";
+      updateCatalogMore(q);
+      return;
+    }
+
+    const fragment = document.createDocumentFragment();
+    list.forEach(p => {
+      const inStock = (p.stock || "").toString().trim().toLowerCase() !== "out of stock";
+      const waMsg = encodeURIComponent(
+        `Hello Mexxa Pharmacy! 👋\n\nI'd like to order:\n\n💊 *${p.name}*\n📦 Category: ${p.category}\n💵 Price: ${p.price}\n📋 ${p.description}\n✅ ${p.stock}\n\nPlease confirm availability. Thank you!`
+      );
+
+      const card = document.createElement("div");
+      card.className = "product-card";
+
+      const imgWrap = document.createElement("div");
+      imgWrap.className = "product-img-wrap";
+
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.alt = p.name;
+
+      if (p.image) {
+        imgWrap.style.setProperty("--thumb", `url('${p.image}')`);
+        imgWrap.classList.add("has-img");
+        img.src = p.image;
+        img.addEventListener("error", () => {
+          imgWrap.style.removeProperty("--thumb");
+          imgWrap.classList.remove("has-img");
+          img.src = `https://placehold.co/300x200/eff6ff/1a56db?text=${encodeURIComponent(p.name)}`;
+        }, { once: true });
+      } else {
+        img.src = `https://placehold.co/300x200/eff6ff/1a56db?text=${encodeURIComponent(p.name)}`;
+      }
+      imgWrap.appendChild(img);
+
+      const body = document.createElement("div");
+      body.className = "product-body";
+
+      const cat = document.createElement("div");
+      cat.className = "product-cat";
+      cat.textContent = p.category;
+
+      const name = document.createElement("div");
+      name.className = "product-name";
+      name.textContent = p.name;
+
+      const price = document.createElement("div");
+      price.className = "product-price";
+      price.textContent = p.price;
+
+      const pill = document.createElement("span");
+      pill.className = "stock-pill " + (inStock ? "in" : "out");
+      pill.textContent = inStock ? "✦ In Stock" : "✕ Out of Stock";
+
+      const desc = document.createElement("p");
+      desc.className = "product-desc";
+      desc.textContent = p.description;
+
+      const waBtn = document.createElement("a");
+      waBtn.className = "wa-order-btn";
+      waBtn.target = "_blank";
+      waBtn.rel = "noopener";
+      waBtn.href = `https://wa.me/256766528078?text=${waMsg}`;
+      waBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Order Now`;
+      waBtn.addEventListener("click", e => e.stopPropagation());
+
+      body.append(cat, name, price, pill, desc, waBtn);
+      card.append(imgWrap, body);
+      card.addEventListener("click", () => { window.location.href = "product.html?name=" + encodeURIComponent(p.name); });
+      fragment.appendChild(card);
+    });
+
+    grid.appendChild(fragment);
+
+    const remaining = fullList.length - list.length;
+    if (remaining > 0) {
+      seeMoreBtn.style.display = "flex";
+      seeMoreBtn.textContent = `See More Products (${remaining} more)`;
+    } else {
+      seeMoreBtn.style.display = "none";
+    }
+
+    updateCatalogMore(q);
+  }
+
+  document.getElementById("seeMoreBtn").addEventListener("click", () => {
+    visibleProductCount += PRODUCTS_PAGE_SIZE;
+    renderProducts(document.getElementById("searchInput").value.trim());
+  });
+
+  document.getElementById("searchInput").addEventListener("input", e => renderProducts(e.target.value));
+
+  function updateCatalogMore(q) {
+    const box = document.getElementById("catalogMore");
+    const text = document.getElementById("catalogMoreText");
+    const btn = document.getElementById("catalogMoreBtn");
+    if (!box) return;
+    box.style.display = "block";
+    if (q) {
+      text.textContent = `Couldn't find "${q}"? We may still have it in stock.`;
+      btn.href = `https://wa.me/256766528078?text=${encodeURIComponent(`Hello Mexxa Pharmacy! 👋 I'm looking for "${q}" but couldn't find it listed on the site — do you have it in stock?`)}`;
+    } else {
+      text.textContent = `Looking for something else? We probably still have it.`;
+      btn.href = `https://wa.me/256766528078?text=${encodeURIComponent("Hello Mexxa Pharmacy! 👋 I'm looking for a medicine that's not listed on the site — can you help me find it?")}`;
+    }
+  }
+
+  function bindHamburger() {
+    const btn = document.getElementById("hamburgerBtn");
+    const drawer = document.getElementById("navDrawer");
+    const overlay = document.getElementById("navOverlay");
+    if (!btn || !drawer || !overlay) return;
+    function openDrawer() {
+      btn.classList.add("open"); drawer.classList.add("open"); overlay.classList.add("open");
+      btn.setAttribute("aria-expanded", "true"); document.body.style.overflow = "hidden";
+    }
+    function closeDrawer() {
+      btn.classList.remove("open"); drawer.classList.remove("open"); overlay.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false"); document.body.style.overflow = "";
+    }
+    btn.addEventListener("click", () => drawer.classList.contains("open") ? closeDrawer() : openDrawer());
+    overlay.addEventListener("click", closeDrawer);
+    drawer.querySelectorAll("a").forEach(a => a.addEventListener("click", closeDrawer));
+    document.addEventListener("keydown", e => { if (e.key === "Escape") closeDrawer(); });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => { bindHamburger(); loadProducts(); });
+  } else {
+    bindHamburger();
+    loadProducts();
+  }
+</script>
+</body>
+</html>
