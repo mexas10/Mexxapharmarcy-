@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Store — Mexxa Pharmacy | All Medicines & Products</title>
+
+  <link rel="canonical" href="https://mexas10.github.io/Mexxapharmarcy-/store.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://docs.google.com">
+  <link rel="dns-prefetch" href="https://wa.me">
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/mexas10/Mexxapharmarcy-/main/android-chrome-192x192.png">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/mexas10/Mexxapharmarcy-/main/android-chrome-192x192.png">
+
+  <meta name="description" content="Browse the full range of medicines and healthcare products at Mexxa Pharmacy, Kampala. Search, filter by category, and order instantly on WhatsApp.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0f2a6e">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mexxa Pharmacy">
+  <meta property="og:title" content="Store — Mexxa Pharmacy">
+  <meta property="og:description" content="Browse the full range of medicines and healthcare products.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/mexas10/Mexxapharmarcy-/main/android-chrome-192x192.png">
+
+<style>
+  /* ─── TOKENS ─────────────────────────────── */
+  :root {
+    --blue:        #1a4fd6;
+    --blue-mid:    #2458e8;
+    --blue-dark:   #0f2a6e;
+    --blue-deeper: #091a4a;
+    --blue-light:  #eef4ff;
+    --sky:         #0369a1;
+    --teal:        #0e7490;
+    --cyan:        #06b6d4;
+    --green:       #15803d;
+    --green-wa:    #20b954;
+    --red:         #dc2626;
+    --amber:       #d97706;
+    --bg:          #f4f6fb;
+    --surface:     #ffffff;
+    --surface-2:   #f8fafd;
+    --border:      #e2e8f2;
+    --text:        #080f20;
+    --muted:       #4f6070;
+    --radius-sm:  10px;
+    --radius:     18px;
+    --radius-lg:  24px;
+    --shadow-xs:  0 1px 2px rgba(10,30,90,.04);
+    --shadow-sm:  0 1px 3px rgba(10,30,90,.05), 0 2px 8px rgba(10,30,90,.04);
+    --shadow:     0 2px 6px rgba(10,30,90,.05), 0 8px 28px rgba(10,30,90,.07);
+    --shadow-lg:  0 4px 14px rgba(10,30,90,.07), 0 20px 50px rgba(10,30,90,.11);
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; font-size:16px; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+  html, body { max-width:100%; }
+
+  body {
+    font-family:'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse 80% 40% at 50% 0%, rgba(26,79,214,.05) 0%, transparent 70%);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img { max-width:100%; }
+  h1,h2,h3,h4 { font-family:'Plus Jakarta Sans', sans-serif; line-height:1.25; }
+  a { color: inherit; }
+
+  /* ─── HEADER ─────────────────────────────── */
+  header {
+    background:linear-gradient(135deg, #060e24 0%, #0c1a42 60%, #0f2460 100%);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(99,160,255,.12);
+    padding:0 22px;
+    padding-left:max(22px, env(safe-area-inset-left));
+    padding-right:max(22px, env(safe-area-inset-right));
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    height:72px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 1px 0 rgba(99,160,255,.08), 0 8px 32px rgba(4,10,30,.4);
+  }
+
+  .header-brand { display:flex; align-items:center; gap:12px; text-decoration:none; flex:1; min-width:0; }
+
+  .header-logo {
+    width:44px; height:44px; border-radius:12px; object-fit:contain;
+    background:#fff; padding:4px; box-sizing:border-box;
+    border:1.5px solid rgba(99,160,255,.25);
+    box-shadow:0 0 0 3px rgba(99,160,255,.08), 0 4px 16px rgba(0,0,0,.3);
+    flex-shrink:0;
+  }
+
+  .brand-name {
+    font-family:'Plus Jakarta Sans', sans-serif; font-size:17px; font-weight:800;
+    color:#fff; letter-spacing:-0.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .brand-tag {
+    font-size:10.5px; color:rgba(125,211,252,.65); font-weight:600;
+    display:block; margin-top:-1px; letter-spacing:.3px; white-space:nowrap;
+  }
+
+  .hamburger {
+    display:flex; flex-direction:column; justify-content:center; gap:5px;
+    width:42px; height:42px; background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.14); border-radius:11px; cursor:pointer;
+    padding:0 11px; flex-shrink:0; transition:background .2s, border-color .2s, transform .15s; z-index:1001;
+  }
+  .hamburger:hover { background:rgba(99,160,255,.15); border-color:rgba(99,160,255,.3); }
+  .hamburger:active { transform:scale(.92); }
+  .hamburger span { display:block; width:100%; height:2px; background:#fff; border-radius:2px; transition:transform .32s cubic-bezier(.4,0,.2,1), opacity .25s ease; }
+  .hamburger span:nth-child(1) { width:100%; }
+  .hamburger span:nth-child(2) { width:75%; }
+  .hamburger span:nth-child(3) { width:55%; }
+  .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); width:100%; }
+  .hamburger.open span:nth-child(2) { opacity:0; }
+  .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); width:100%; }
+
+  .nav-overlay {
+    display:block; position:fixed; inset:0; background:rgba(4,10,30,.7);
+    backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+    z-index:998; opacity:0; pointer-events:none; transition:opacity .32s;
+  }
+  .nav-overlay.open { opacity:1; pointer-events:auto; }
+
+  .nav-drawer {
+    position:fixed; top:0; right:0; width:272px; height:100%;
+    background:linear-gradient(160deg, #080f26 0%, #0c1a44 50%, #0a172e 100%);
+    border-left:1px solid rgba(99,160,255,.1); z-index:999;
+    transform:translateX(calc(100% + 20px));
+    transition:transform .34s cubic-bezier(.4,0,.2,1);
+    padding-top:88px; display:flex; flex-direction:column; overflow-y:auto;
+    box-shadow:-16px 0 48px rgba(0,0,0,.55);
+  }
+  .nav-drawer.open { transform:translateX(0); }
+  .nav-drawer-brand {
+    padding:0 24px 20px; border-bottom:1px solid rgba(99,160,255,.08); margin-bottom:8px;
+    font-family:'Plus Jakarta Sans', sans-serif; font-size:13px; font-weight:700;
+    color:rgba(125,211,252,.5); letter-spacing:.8px; text-transform:uppercase;
+  }
+  .nav-drawer a {
+    display:flex; align-items:center; gap:13px; padding:14px 24px;
+    color:rgba(255,255,255,.65); text-decoration:none; font-size:14.5px; font-weight:600;
+    border-left:3px solid transparent; transition:background .15s, color .15s, border-color .2s;
+    font-family:'Plus Jakarta Sans', sans-serif; letter-spacing:.1px;
+  }
+  .nav-drawer a:hover { background:rgba(99,160,255,.08); color:#fff; border-left-color:rgba(99,160,255,.6); }
+  .nav-drawer a .nav-icon {
+    width:32px; height:32px; background:rgba(99,160,255,.08); border:1px solid rgba(99,160,255,.12);
+    border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:15px;
+    flex-shrink:0; transition:background .15s;
+  }
+  .nav-drawer a:hover .nav-icon { background:rgba(99,160,255,.16); }
+  .nav-drawer-footer {
+    margin-top:auto; padding:20px 24px; border-top:1px solid rgba(255,255,255,.05);
+    font-size:11px; color:rgba(255,255,255,.18); font-family:'Plus Jakarta Sans', sans-serif; letter-spacing:.3px;
+  }
+
+  /* ─── WHATSAPP FAB ───────────────────────── */
+  .wa-fab {
+    position:fixed; right:max(20px, env(safe-area-inset-right)); bottom:max(20px, env(safe-area-inset-bottom));
+    width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg, #16a34a 0%, #15803d 100%); color:#fff; text-decoration:none;
+    box-shadow:0 4px 18px rgba(22,163,74,.45), 0 2px 6px rgba(0,0,0,.2);
+    border:1px solid rgba(255,255,255,.15); z-index:900;
+    transition:transform .2s, box-shadow .2s; animation:wa-fab-pulse 2.6s ease-in-out infinite;
+  }
+  .wa-fab:hover { transform:scale(1.07); box-shadow:0 6px 24px rgba(22,163,74,.6), 0 2px 6px rgba(0,0,0,.25); }
+  @keyframes wa-fab-pulse {
+    0%, 100% { box-shadow:0 4px 18px rgba(22,163,74,.45), 0 2px 6px rgba(0,0,0,.2), 0 0 0 0 rgba(22,163,74,.4); }
+    50% { box-shadow:0 4px 18px rgba(22,163,74,.45), 0 2px 6px rgba(0,0,0,.2), 0 0 0 10px rgba(22,163,74,0); }
+  }
+  @media (max-width:640px) { .wa-fab { width:50px; height:50px; right:16px; bottom:16px; } }
+
+  /* ─── BREADCRUMB ─────────────────────────── */
+  .back-bar { max-width:1160px; margin:0 auto; padding:18px 18px 0; }
+  .breadcrumb {
+    display:flex; align-items:center; flex-wrap:wrap; gap:6px;
+    font-family:'Plus Jakarta Sans', sans-serif; font-size:12.5px; font-weight:600;
+  }
+  .breadcrumb a { color:var(--muted); text-decoration:none; transition:color .15s; }
+  .breadcrumb a:hover { color:var(--blue); }
+  .breadcrumb .sep { color:#c3cede; }
+  .breadcrumb .current { color:var(--blue); font-weight:700; }
+
+  /* ─── PAGE HEAD ──────────────────────────── */
+  .store-hero {
+    max-width:1160px; margin:0 auto; padding:18px 18px 0;
+  }
+  .store-hero h1 {
+    font-size:26px; font-weight:900; letter-spacing:-.6px; margin-bottom:6px;
+    background:linear-gradient(100deg, var(--blue-dark) 0%, var(--blue) 55%, var(--sky) 100%);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  }
+  .store-hero p { font-size:13.5px; color:var(--muted); font-weight:500; }
+
+  /* ─── STORE HERO BANNER ──────────────────── */
+  .store-banner {
+    max-width:1160px; margin:18px auto 0; padding:0 18px;
+    display:grid; grid-template-columns:1.15fr 1fr; gap:24px; align-items:stretch;
+  }
+  .store-banner-text {
+    background:var(--surface); border-radius:var(--radius-lg); border:1px solid rgba(26,79,214,.08);
+    box-shadow: var(--shadow); padding:26px 26px 22px; display:flex; flex-direction:column; justify-content:center;
+  }
+  .store-banner-text h1 {
+    font-size:32px; font-weight:900; letter-spacing:-1px; color:var(--text); margin-bottom:10px; line-height:1.1;
+  }
+  .store-banner-text p { font-size:14px; color:var(--muted); font-weight:500; margin-bottom:20px; max-width:420px; }
+  .store-trust-row { display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; }
+  .store-trust-item {
+    display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center;
+    padding:12px 6px; border:1px solid var(--border); border-radius:12px; background:var(--surface-2);
+  }
+  .store-trust-item svg { color:var(--blue); }
+  .store-trust-item span { font-size:10.5px; font-weight:700; color:var(--muted); line-height:1.25; }
+  .store-banner-img {
+    border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg);
+    min-height:220px; background-size:cover; background-position:center;
+  }
+
+  /* ─── LOCATIONS ──────────────────────────── */
+  .section-head {
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    margin:36px 0 16px;
+  }
+  .section-head h2 {
+    display:flex; align-items:center; gap:8px;
+    font-size:19px; font-weight:800; color:var(--text); letter-spacing:-.3px;
+  }
+  .section-head h2 svg { color:var(--blue); }
+  .section-head a {
+    font-size:12.5px; font-weight:700; color:var(--blue); text-decoration:none;
+    display:flex; align-items:center; gap:4px; white-space:nowrap;
+  }
+  .section-head a:hover { text-decoration:underline; }
+
+  .location-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .loc-card {
+    background:var(--surface); border-radius:var(--radius); border:1px solid var(--border);
+    box-shadow:var(--shadow-sm); overflow:hidden; transition:box-shadow .2s, transform .2s;
+  }
+  .loc-card:hover { box-shadow:var(--shadow); transform:translateY(-2px); }
+  .loc-card-img { height:120px; background-size:cover; background-position:center; background-color:#eef4ff; }
+  .loc-card-body { padding:16px 18px 18px; }
+  .loc-name { display:flex; align-items:center; gap:6px; font-family:'Plus Jakarta Sans', sans-serif; font-size:15px; font-weight:800; color:var(--text); margin-bottom:8px; }
+  .loc-name svg { color:var(--blue); flex-shrink:0; }
+  .loc-detail { display:flex; align-items:flex-start; justify-content:space-between; gap:10px; margin-bottom:14px; }
+  .loc-addr { font-size:12.5px; color:var(--muted); line-height:1.5; }
+  .loc-hours { font-size:11.5px; color:var(--muted); display:flex; align-items:center; gap:4px; white-space:nowrap; flex-shrink:0; }
+  .loc-btn-row { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .loc-btn {
+    display:flex; align-items:center; justify-content:center; gap:6px;
+    padding:10px 10px; border-radius:10px; font-size:12px; font-weight:700;
+    text-decoration:none; transition:transform .15s, filter .15s;
+  }
+  .loc-btn:hover { transform:translateY(-1px); }
+  .loc-btn.directions { border:1.5px solid rgba(26,79,214,.25); color:var(--blue); background:#fff; }
+  .loc-btn.call { background:linear-gradient(155deg, #22c55e, #15803d); color:#fff; }
+
+  /* ─── STORE GALLERY ──────────────────────── */
+  .gallery-strip { display:grid; grid-template-columns:repeat(6, 1fr); gap:10px; }
+  .gallery-strip a {
+    display:block; aspect-ratio:1; border-radius:12px; overflow:hidden;
+    background-size:cover; background-position:center; background-color:#eef4ff;
+    transition:transform .2s, box-shadow .2s; box-shadow:var(--shadow-xs);
+  }
+  .gallery-strip a:hover { transform:scale(1.04); box-shadow:var(--shadow-sm); }
+
+  /* ─── TRUST STRIP ────────────────────────── */
+  .trust-strip {
+    max-width:1160px; margin:36px auto 0; padding:0 18px;
+  }
+  .trust-strip-inner {
+    background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius);
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; padding:22px 18px;
+  }
+  .trust-strip-item { display:flex; align-items:center; gap:10px; }
+  .trust-strip-item svg { color:var(--green); flex-shrink:0; }
+  .trust-strip-item strong { display:block; font-size:12.5px; font-weight:800; color:var(--text); }
+  .trust-strip-item span { display:block; font-size:11px; color:var(--muted); }
+
+  /* ─── WA CTA BANNER ──────────────────────── */
+  .wa-cta-banner {
+    max-width:1160px; margin:18px auto 0; padding:0 18px;
+  }
+  .wa-cta-inner {
+    background:linear-gradient(150deg, #0f2a6e 0%, #1a4fd6 55%, #0c8fd9 100%);
+    border-radius:var(--radius); padding:20px 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    box-shadow:0 10px 30px rgba(15,40,100,.25);
+  }
+  .wa-cta-left { display:flex; align-items:center; gap:14px; }
+  .wa-cta-icon {
+    width:44px; height:44px; border-radius:50%; background:var(--green-wa);
+    display:flex; align-items:center; justify-content:center; color:#fff; flex-shrink:0;
+  }
+  .wa-cta-left strong { display:block; font-size:14px; font-weight:800; color:#fff; }
+  .wa-cta-left span { display:block; font-size:12px; color:rgba(255,255,255,.75); }
+  .wa-cta-btn {
+    display:flex; align-items:center; gap:7px; background:linear-gradient(155deg, #22c55e, #15803d);
+    color:#fff; text-decoration:none; font-family:'Plus Jakarta Sans', sans-serif; font-size:13px; font-weight:800;
+    padding:12px 20px; border-radius:12px; box-shadow:0 4px 14px rgba(0,0,0,.2); flex-shrink:0;
+    transition:transform .2s, filter .2s;
+  }
+  .wa-cta-btn:hover { transform:translateY(-2px); filter:brightness(1.06); }
+
+  /* ─── CONTAINER ──────────────────────────── */
+  .container { max-width:1160px; margin:0 auto; padding:20px 18px 48px; isolation:isolate; }
+
+  .panel {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(26,79,214,.08);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 2px 8px rgba(10,30,90,.04), 0 10px 32px rgba(10,30,90,.07);
+    overflow: hidden;
+  }
+  .panel-body { padding: 20px 24px 24px; }
+
+  /* ─── SEARCH ─────────────────────────────── */
+  .search-wrap { position:relative; margin-bottom:16px; filter: drop-shadow(0 4px 16px rgba(26,86,219,.13)); }
+  .search-icon { position:absolute; left:18px; top:50%; transform:translateY(-50%); color:var(--blue); pointer-events:none; z-index:1; }
+  #searchInput {
+    width:100%; padding:16px 20px 16px 52px; border:1.5px solid rgba(26,79,214,.2); border-radius:50px;
+    font-size:15px; font-family:inherit; background:#fff; color:var(--text); outline:none;
+    transition:border-color .2s, box-shadow .2s, background .2s; margin:0; font-weight:500;
+    letter-spacing:-.01em; box-shadow: 0 2px 12px rgba(10,30,90,.05);
+  }
+  #searchInput::placeholder { color:#94a3b8; font-weight:400; }
+  #searchInput:focus { border-color:var(--blue); box-shadow: 0 0 0 4px rgba(26,79,214,.10), 0 2px 12px rgba(10,30,90,.06); background:#fff; }
+
+  /* ─── CATEGORY FILTER CHIPS ──────────────── */
+  .cat-filter-row {
+    display:flex; gap:8px; overflow-x:auto; padding-bottom:6px; margin-bottom:22px;
+    scrollbar-width:none; touch-action:pan-x;
+    -webkit-overflow-scrolling:touch; overscroll-behavior-x:contain;
+  }
+  .cat-filter-row::-webkit-scrollbar { display:none; }
+  .cat-chip {
+    flex-shrink:0; font-family:'Plus Jakarta Sans', sans-serif; font-size:12.5px; font-weight:700;
+    padding:9px 16px; border-radius:50px; border:1.5px solid rgba(26,79,214,.15);
+    background:#fff; color:var(--muted); cursor:pointer; transition:all .18s; white-space:nowrap;
+  }
+  .cat-chip:hover { border-color:rgba(26,79,214,.35); color:var(--blue); }
+  .cat-chip.active {
+    background:linear-gradient(135deg, var(--blue), var(--sky));
+    color:#fff; border-color:transparent; box-shadow:0 4px 12px rgba(26,79,214,.3);
+  }
+
+  /* ─── PRODUCTS GRID ──────────────────────── */
+  .products-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(175px, 1fr)); gap:14px; }
+
+  .see-more-btn {
+    display:flex; align-items:center; justify-content:center; gap:8px; width:100%; margin-top:22px;
+    padding:14px 20px; background:linear-gradient(135deg, var(--blue-light) 0%, #eef4ff 100%);
+    border:1.5px solid rgba(26,79,214,.16); border-radius:14px; color:var(--blue);
+    font-family:'Plus Jakarta Sans', sans-serif; font-size:14px; font-weight:800; cursor:pointer;
+    transition:background .2s, transform .2s, box-shadow .2s;
+  }
+  .see-more-btn:hover { background:linear-gradient(135deg, #e4edff 0%, #ddeaff 100%); transform:translateY(-2px); box-shadow:0 6px 18px rgba(26,79,214,.14); }
+  .see-more-btn:active { transform:translateY(0); }
+
+  .product-card {
+    background:#fff; border-radius:18px; border:1px solid rgba(15,40,100,.07);
+    box-shadow: 0 1px 0 rgba(255,255,255,1) inset, 0 1px 2px rgba(15,40,100,.04), 0 4px 12px rgba(15,40,100,.06);
+    display:flex; flex-direction:column; overflow:hidden;
+    transition: transform .4s cubic-bezier(.2,0,0,1), box-shadow .4s cubic-bezier(.2,0,0,1), border-color .3s;
+    position:relative; cursor:pointer;
+  }
+  .product-card::after {
+    content:''; position:absolute; inset:0;
+    background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.22) 50%, transparent 60%);
+    background-size:250% 100%; background-position:250% center; transition:background-position .55s ease;
+    border-radius:18px; z-index:10; pointer-events:none;
+  }
+  .product-card:hover::after { background-position:-50% center; }
+  .product-card::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:3px;
+    background: linear-gradient(90deg, #0f2a6e 0%, #1a4fd6 45%, #38bdf8 100%);
+    opacity:0; transition:opacity .4s; z-index:11; border-radius:18px 18px 0 0;
+  }
+  .product-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 1px 0 rgba(255,255,255,1) inset, 0 2px 4px rgba(15,40,100,.04), 0 10px 22px rgba(15,40,100,.10), 0 20px 40px rgba(15,40,100,.12);
+    border-color: rgba(26,79,214,.18);
+  }
+  .product-card:hover::before { opacity:1; }
+
+  .product-img-wrap {
+    height:130px; background: radial-gradient(ellipse at 65% 38%, #ddeaff 0%, #eef3ff 50%, #e2ecff 100%);
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+    border-bottom:1px solid rgba(26,79,214,.05); padding:10px; position:relative;
+  }
+  .product-img-wrap::after {
+    content:''; position:absolute; inset:0;
+    background: radial-gradient(ellipse at center, transparent 45%, rgba(120,160,230,.13) 100%);
+    z-index:2; pointer-events:none;
+  }
+  .product-img-wrap::before {
+    content:''; position:absolute; inset:-24px; background-image:var(--thumb);
+    background-size:cover; background-position:center; filter: blur(22px) brightness(.82) saturate(1.2);
+    opacity:0; z-index:0;
+  }
+  .product-img-wrap.has-img::before { opacity:1; }
+  .product-img-wrap.has-img::after { display:none; }
+  .product-img-wrap img {
+    position:relative; z-index:1; max-width:100%; max-height:100%; object-fit:contain;
+    transition: transform .45s cubic-bezier(.2,0,0,1);
+    filter: drop-shadow(0 4px 10px rgba(15,40,100,.16)) drop-shadow(0 1px 2px rgba(15,40,100,.08));
+  }
+  .product-card:hover .product-img-wrap img { transform: scale(1.10) translateY(-3px); }
+
+  .product-body { padding:12px 13px 14px; flex:1; display:flex; flex-direction:column; }
+  .product-cat {
+    display:inline-flex; align-items:center; font-size:9px; font-weight:800; color:var(--blue);
+    text-transform:uppercase; letter-spacing:.8px;
+    background: linear-gradient(135deg, rgba(26,79,214,.08), rgba(56,189,248,.06));
+    border:1px solid rgba(26,79,214,.13); border-radius:50px; padding:2px 8px; width:fit-content; margin-bottom:7px;
+  }
+  .product-name { font-family:'Plus Jakarta Sans', sans-serif; font-size:13.5px; font-weight:800; color:#080f20; line-height:1.28; margin-bottom:5px; letter-spacing:-.2px; }
+  .product-price {
+    font-family:'Plus Jakarta Sans', sans-serif; font-size:19px; font-weight:900;
+    background: linear-gradient(110deg, #0f2a6e 0%, #1a4fd6 55%, #0ea5e9 100%);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    margin-bottom:7px; letter-spacing:-.5px; line-height:1;
+  }
+  .stock-pill { display:inline-flex; align-items:center; gap:4px; padding:3px 9px; border-radius:50px; font-size:9.5px; font-weight:700; width:fit-content; margin-bottom:7px; letter-spacing:.1px; }
+  .stock-pill.in { background: linear-gradient(135deg, #f0fdf4, #dcfce7); color:#15803d; border:1px solid rgba(21,128,61,.2); }
+  .stock-pill.out { background: linear-gradient(135deg, #fff1f2, #ffe4e6); color:#be123c; border:1px solid rgba(190,18,60,.2); }
+  .product-desc {
+    font-size:11px; color:#5a6a80; line-height:1.5; flex:1; margin-bottom:11px;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+  }
+
+  .view-product-btn {
+    display:flex; align-items:center; justify-content:center; gap:5px;
+    background: linear-gradient(110deg, #0f2a6e 0%, #1a4fd6 55%, #0ea5e9 100%);
+    color:#fff; text-decoration:none; font-family:'Plus Jakarta Sans', sans-serif; font-size:11.5px; font-weight:750;
+    padding:9px 12px; border-radius:10px; transition: filter .2s, transform .2s, box-shadow .2s;
+    box-shadow: 0 1px 0 rgba(255,255,255,.15) inset, 0 3px 10px rgba(26,79,214,.22);
+    letter-spacing:.01em;
+  }
+  .view-product-btn svg { transition: transform .2s; }
+  .view-product-btn:hover {
+    filter:brightness(1.08); transform:translateY(-1px);
+    box-shadow: 0 1px 0 rgba(255,255,255,.15) inset, 0 6px 16px rgba(26,79,214,.3);
+  }
+  .view-product-btn:hover svg { transform: translateX(2px); }
+  .view-product-btn:active { transform:translateY(0); filter:brightness(.97); }
+
+  @media (hover:none) {
+    .product-card:hover { transform:none !important; box-shadow: 0 1px 0 rgba(255,255,255,1) inset, 0 1px 2px rgba(15,40,100,.04), 0 4px 12px rgba(15,40,100,.06) !important; }
+    .product-card:hover .product-img-wrap img { transform:none !important; }
+  }
+
+  .shimmer {
+    background: linear-gradient(100deg, #eef3ff 30%, #f7faff 50%, #eef3ff 70%);
+    background-size:200% 100%; animation:shimmer 1.4s infinite; border-radius:22px; height:280px;
+  }
+  @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+  /* ─── SEARCH MORE CTA ────────────────────── */
+  .catalog-more {
+    margin-top: 26px; padding: 28px 24px; border-radius: 20px;
+    background: linear-gradient(150deg, #0f2a6e 0%, #1a4fd6 55%, #0c8fd9 100%);
+    box-shadow: 0 10px 30px rgba(15,40,100,.28); text-align:center; position:relative; overflow:hidden;
+  }
+  .catalog-more::before {
+    content:''; position:absolute; inset:0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cpath d='M28 18h8v10h10v8H36v10h-8V36H18v-8h10z' fill='white' fill-opacity='0.045'/%3E%3C/svg%3E");
+    background-size:64px 64px; pointer-events:none;
+  }
+  .catalog-more-icon {
+    width:46px; height:46px; margin:0 auto 14px; border-radius:50%;
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.25);
+    display:flex; align-items:center; justify-content:center; color:#fff; position:relative; z-index:1;
+  }
+  .catalog-more p { font-size:14px; color:#fff; margin-bottom:18px; font-weight:700; position:relative; z-index:1; letter-spacing:-.1px; }
+  .catalog-more-btn {
+    display:inline-flex; align-items:center; gap:8px;
+    background: linear-gradient(155deg, #22c55e, #15803d); color:#fff; text-decoration:none;
+    font-family:'Plus Jakarta Sans', sans-serif; font-size:13.5px; font-weight:800;
+    padding:13px 24px; border-radius:50px; box-shadow:0 6px 18px rgba(0,0,0,.25);
+    transition: transform .2s, filter .2s; position:relative; z-index:1;
+  }
+  .catalog-more-btn:hover { transform:translateY(-2px); filter:brightness(1.08); }
+
+  /* ─── FOOTER ─────────────────────────────── */
+  footer {
+    background:var(--blue-dark); color:rgba(255,255,255,.7);
+    padding:40px 20px 28px; padding-bottom:max(28px, env(safe-area-inset-bottom));
+    padding-left:max(20px, env(safe-area-inset-left)); padding-right:max(20px, env(safe-area-inset-right));
+    margin-top:40px;
+  }
+  .footer-inner {
+    max-width:1160px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr;
+    gap:32px; padding-bottom:28px; border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .footer-brand-name { font-family:'Plus Jakarta Sans', sans-serif; font-size:19px; font-weight:800; color:#fff; margin-bottom:6px; }
+  .footer-desc { font-size:13px; line-height:1.7; color:rgba(255,255,255,.6); margin-bottom:14px; }
+  .footer-wa {
+    display:inline-flex; align-items:center; gap:6px; background:var(--green-wa); color:#fff;
+    text-decoration:none; font-size:13px; font-weight:700; padding:9px 18px; border-radius:50px; transition:opacity .2s;
+  }
+  .footer-wa:hover { opacity:.85; }
+  .footer-col h4 { font-family:'Plus Jakarta Sans', sans-serif; font-size:13px; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:.6px; margin-bottom:14px; }
+  .footer-col p, .footer-col a { font-size:13px; color:rgba(255,255,255,.6); text-decoration:none; display:block; margin-bottom:8px; transition:color .2s; line-height:1.6; }
+  .footer-col a:hover { color:#fff; }
+  .footer-bottom { max-width:1160px; margin:20px auto 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; font-size:12px; color:rgba(255,255,255,.4); }
+
+  /* ─── RESPONSIVE ─────────────────────────── */
+  @media (max-width:900px) {
+    .products-grid { grid-template-columns:repeat(auto-fill, minmax(160px,1fr)); gap:12px; }
+    .footer-inner { grid-template-columns:1fr 1fr; gap:24px; }
+    .footer-inner > div:first-child { grid-column:1 / -1; }
+    .store-banner { grid-template-columns:1fr; }
+    .store-banner-img { min-height:180px; order:-1; }
+  }
+  @media (max-width:640px) {
+    header { height:56px; padding:0 14px; }
+    .brand-name { font-size:15px; }
+    .brand-tag { display:none; }
+    .header-logo { width:34px; height:34px; border-radius:8px; }
+    #searchInput { font-size:14px; padding:12px 14px 12px 44px; }
+    .products-grid { grid-template-columns:repeat(2, 1fr); gap:10px; }
+    .product-img-wrap { height:110px; padding:8px; }
+    .product-body { padding:9px 10px 11px; }
+    .product-cat { font-size:8.5px; padding:2px 6px; margin-bottom:5px; }
+    .product-name { font-size:12px; margin-bottom:3px; }
+    .product-price { font-size:15px; margin-bottom:5px; }
+    .stock-pill { font-size:9px; padding:2px 7px; margin-bottom:5px; }
+    .product-desc { font-size:10.5px; margin-bottom:9px; }
+    .view-product-btn { font-size:11px; padding:8px 8px; border-radius:9px; }
+    .store-hero h1 { font-size:21px; }
+    .footer-inner { grid-template-columns:1fr; gap:20px; }
+    .footer-bottom { flex-direction:column; text-align:center; gap:6px; }
+    footer { padding:28px 16px 20px; }
+    .store-banner-text { padding:20px; }
+    .store-banner-text h1 { font-size:24px; }
+    .store-trust-row { grid-template-columns:repeat(2, 1fr); }
+    .location-grid { grid-template-columns:1fr; }
+    .gallery-strip { grid-template-columns:repeat(3, 1fr); }
+    .trust-strip-inner { grid-template-columns:1fr 1fr; }
+    .wa-cta-inner { flex-direction:column; text-align:center; }
+    .wa-cta-left { flex-direction:column; }
+    .wa-cta-btn { width:100%; justify-content:center; }
+  }
+  @media (max-width:400px) {
+    .products-grid { grid-template-columns:repeat(2, 1fr); gap:8px; }
+    .product-img-wrap { height:120px; }
+    .product-body { padding:10px 11px 12px; gap:5px; }
+    .product-name { font-size:12.5px; }
+    .product-price { font-size:16px; }
+  }
+  @media (min-width:641px) and (max-width:767px) {
+    .products-grid { grid-template-columns:repeat(2, 1fr); }
+  }
+  @media (min-width:1400px) {
+    .container { max-width:1320px; }
+    .footer-inner, .footer-bottom { max-width:1320px; }
+    .products-grid { grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ═══════════════════════════════ -->
+<header>
+  <a class="header-brand" href="index.html">
+    <img class="header-logo" src="https://raw.githubusercontent.com/mexas10/Mexxapharmarcy-/main/android-chrome-192x192.png" alt="Mexxa Pharmacy Logo" width="44" height="44" decoding="async">
+    <div>
+      <div class="brand-name">Mexxa Pharmacy</div>
+      <span class="brand-tag">Your Trusted Health Partner</span>
+    </div>
+  </a>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<a class="wa-fab" href="https://wa.me/256766528078" target="_blank" rel="noopener noreferrer" aria-label="Order on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-drawer" id="navDrawer">
+  <div class="nav-drawer-brand">Navigation</div>
+  <a href="index.html#home" class="nav-drawer-link"><span class="nav-icon">🏠</span> Home</a>
+  <a href="store.html#locations" class="nav-drawer-link"><span class="nav-icon">📍</span> Locations</a>
+  <a href="store.html" class="nav-drawer-link"><span class="nav-icon">💊</span> Store</a>
+  <a href="store.html#gallery" class="nav-drawer-link"><span class="nav-icon">📸</span> Library</a>
+  <a href="index.html#aiChecker" class="nav-drawer-link"><span class="nav-icon">🤖</span> Dosage AI</a>
+  <a href="about.html" class="nav-drawer-link"><span class="nav-icon">ℹ️</span> About</a>
+  <a href="index.html#social" class="nav-drawer-link"><span class="nav-icon">📱</span> Social</a>
+  <a href="index.html#contact" class="nav-drawer-link"><span class="nav-icon">📞</span> Contact</a>
+  <div class="nav-drawer-footer">Mexxa Pharmacy · Kampala, Uganda</div>
+</div>
+
+<div class="back-bar">
+  <div class="breadcrumb">
+    <a href="index.html#home">Home</a>
+    <span class="sep">/</span>
+    <span class="current">Store</span>
+  </div>
+</div>
+
+<div class="store-banner">
+  <div class="store-banner-text">
+    <h1>Our Store</h1>
+    <p>Visit our physical branches or shop medicines online. We are here to serve your health.</p>
+    <div class="store-trust-row">
+      <div class="store-trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+        <span>Licensed Pharmacy</span>
+      </div>
+      <div class="store-trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="15" height="10" rx="1.5"/><path d="M16 10h3.5a1.5 1.5 0 011.34.83L23 14v3h-3"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg>
+        <span>Fast Delivery</span>
+      </div>
+      <div class="store-trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        <span>WhatsApp Support</span>
+      </div>
+      <div class="store-trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        <span>Secure Shopping</span>
+      </div>
+    </div>
+  </div>
+  <div class="store-banner-img" style="background-image:url('https://i.ibb.co/TMMQJPhF/unnamed.jpg')"></div>
+</div>
+
+<div class="container" style="padding-top:0;">
+
+  <!-- LOCATIONS -->
+  <div id="locations">
+    <div class="section-head">
+      <h2>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Our Locations
+      </h2>
+      <a href="https://www.google.com/maps/search/?api=1&query=Mexxa+Pharmacy+Kampala" target="_blank" rel="noopener noreferrer">
+        View all locations on map →
+      </a>
+    </div>
+    <div class="location-grid">
+      <div class="loc-card">
+        <div class="loc-card-img" style="background-image:url('https://i.ibb.co/TMMQJPhF/unnamed.jpg')"></div>
+        <div class="loc-card-body">
+          <div class="loc-name">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Kitintale Branch
+          </div>
+          <div class="loc-detail">
+            <div class="loc-addr">HW Mall, Kitintale<br>Opp. UMEME Offices, Kampala, Uganda</div>
+            <div class="loc-hours">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
+              Mon–Sun<br>7AM–11PM
+            </div>
+          </div>
+          <div class="loc-btn-row">
+            <a class="loc-btn directions" href="https://www.google.com/maps/search/?api=1&query=Mexxa+Pharmacy+Kitintale&query_place_id=ChIJYSDNG1y_fRcRAFPF1Y2Rnzk" target="_blank" rel="noopener noreferrer">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Get Directions
+            </a>
+            <a class="loc-btn call" href="tel:+256761545095">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Call / WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="loc-card">
+        <div class="loc-card-img" style="background-image:url('https://i.ibb.co/8LK8CswK/thumbnail.jpg')"></div>
+        <div class="loc-card-body">
+          <div class="loc-name">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Kitetika Branch
+          </div>
+          <div class="loc-detail">
+            <div class="loc-addr">Shell Kitetika<br>Opp. Kumbuzi, Gayaza Road, Kampala, Uganda</div>
+            <div class="loc-hours">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
+              Mon–Sun<br>7AM–11PM
+            </div>
+          </div>
+          <div class="loc-btn-row">
+            <a class="loc-btn directions" href="https://www.google.com/maps/search/?api=1&query=Shell+Kitetika&query_place_id=ChIJawz4RQCxfRcRL_P-7XVvUho" target="_blank" rel="noopener noreferrer">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Get Directions
+            </a>
+            <a class="loc-btn call" href="tel:+256766528078">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Call / WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORE GALLERY -->
+  <div id="gallery">
+    <div class="section-head">
+      <h2>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        Store Gallery
+      </h2>
+      <a href="https://wa.me/256766528078?text=Hello!%20Can%20I%20see%20more%20photos%20of%20your%20store%3F" id="galleryMoreLink" target="_blank" rel="noopener noreferrer">
+        View more photos →
+      </a>
+    </div>
+    <div class="gallery-strip">
+      <a href="https://i.ibb.co/kgFpKj3t/unnamed-2.jpg" target="_blank" rel="noopener noreferrer" style="background-image:url('https://i.ibb.co/kgFpKj3t/unnamed-2.jpg')" aria-label="Store photo 1"></a>
+      <a href="https://i.ibb.co/TMMQJPhF/unnamed.jpg" target="_blank" rel="noopener noreferrer" style="background-image:url('https://i.ibb.co/TMMQJPhF/unnamed.jpg')" aria-label="Store photo 2"></a>
+      <a href="https://i.ibb.co/8LK8CswK/thumbnail.jpg" target="_blank" rel="noopener noreferrer" style="background-image:url('https://i.ibb.co/8LK8CswK/thumbnail.jpg')" aria-label="Store photo 3"></a>
+      <a href="https://i.ibb.co/kgFpKj3t/unnamed-2.jpg" target="_blank" rel="noopener noreferrer" style="background-image:url('https://i.ibb.co/kgFpKj3t/unnamed-2.jpg')" aria-label="Store photo 4"></a>
+      <a href="https://i.ibb.co/TMMQJPhF/unnamed.jpg" target="_blank" rel="noopener noreferrer" style="background-image:url('https://i.ibb.co/TMMQJPhF/unnamed.jpg')" aria-label="Store photo 5"></a>
+      <a href="https://i.ibb.co/8LK8CswK/thumbnail.jpg" target="_blank" rel="noopener noreferrer" style="background-image:url('https://i.ibb.co/8LK8CswK/thumbnail.jpg')" aria-label="Store photo 6"></a>
+    </div>
+  </div>
+
+  <!-- SHOP -->
+  <div class="section-head" style="margin-top:36px;">
+    <h2>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      Shop Medicines &amp; Products
+    </h2>
+  </div>
+  <div id="productsSection">
+    <div class="search-wrap">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="searchInput" placeholder="Search medicines or categories…" autocomplete="off" aria-label="Search products" spellcheck="false">
+    </div>
+    <div class="cat-filter-row" id="catFilterRow"></div>
+    <div class="products-grid" id="productList"></div>
+    <button type="button" class="see-more-btn" id="seeMoreBtn" style="display:none;">See More Products</button>
+    <div class="catalog-more" id="catalogMore" style="display:none;">
+      <div class="catalog-more-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <p id="catalogMoreText">Can't find what you're looking for?</p>
+      <a class="catalog-more-btn" id="catalogMoreBtn" href="https://wa.me/256766528078" target="_blank" rel="noopener noreferrer">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Ask us on WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-strip-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="15" height="10" rx="1.5"/><path d="M16 10h3.5a1.5 1.5 0 011.34.83L23 14v3h-3"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg>
+      <div>
+        <strong>Fast Delivery</strong>
+        <span>We deliver across Kampala quickly and reliably.</span>
+      </div>
+    </div>
+    <div class="trust-strip-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+      <div>
+        <strong>Genuine Products</strong>
+        <span>100% authentic medicines from trusted suppliers.</span>
+      </div>
+    </div>
+    <div class="trust-strip-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      <div>
+        <strong>Secure Payments</strong>
+        <span>Pay safely via Mobile Money or cash on delivery.</span>
+      </div>
+    </div>
+    <div class="trust-strip-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+      <div>
+        <strong>Always Here</strong>
+        <span>Need help? Chat with us on WhatsApp anytime.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WA CTA BANNER -->
+<div class="wa-cta-banner">
+  <div class="wa-cta-inner">
+    <div class="wa-cta-left">
+      <div class="wa-cta-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </div>
+      <div>
+        <strong>Need help or want to place an order?</strong>
+        <span>Chat with us now on WhatsApp. We're ready to help!</span>
+      </div>
+    </div>
+    <a class="wa-cta-btn" href="https://wa.me/256766528078" target="_blank" rel="noopener noreferrer">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Chat on WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- ══ FOOTER ═════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">Mexxa Pharmacy</div>
+      <p class="footer-desc">Quality medicines and healthcare at affordable prices. Your trusted health partner in Kampala since day one. Open daily from 7:00 AM to 11:00 PM.</p>
+      <a class="footer-wa" href="https://wa.me/256766528078" target="_blank" rel="noopener noreferrer">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+    <div class="footer-col">
+      <h4>Locations</h4>
+      <p>HW Mall, Kitintale<br>Opp. UMEME Offices</p>
+      <p>Shell Kitetika<br>Opp. Kumbuzi, Gayaza Rd</p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:mexxapharmacy@gmail.com">mexxapharmacy@gmail.com</a>
+      <a href="tel:+256761545095">0761 545 095</a>
+      <a href="tel:+256779449127">0779 449 127</a>
+      <a href="tel:+256766528078">0766 528 078</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Mexxa Pharmacy. All rights reserved.</span>
+    <span>Quality · Care · Trust • Open Daily 7AM–11PM</span>
+  </div>
+</footer>
+
+<script>
+  // URL protection — decoded at runtime, matches index.html
+  const _k = 'MexxaPharmacy2026';
+  const _d = h => h.match(/.{2}/g).map((b,i) => String.fromCharCode(parseInt(b,16) ^ _k.charCodeAt(i % _k.length))).join('');
+  const SHEET_URL = _d('25110c08126a474e1602021057555f5d512100561b0e3d4712021f04021d415857533916571c4e610f381a0230114d444946401a5d330e520a32573c5a3e0d1d5f5d534012321a3f04023b141923005b3304611d513b0c02571521571503155c0c0c460a5845220b');
+
+  const CACHE_KEY = "mexxa_products_v2";
+  const CACHE_TTL = 30 * 60 * 1000;
+  let products = [];
+  let activeCategory = "All";
+
+  const PRODUCTS_PAGE_SIZE = 12;
+  let visibleProductCount = PRODUCTS_PAGE_SIZE;
+  let lastRenderedQuery = null;
+
+  async function loadProducts() {
+    const grid = document.getElementById("productList");
+    const cached = (() => { try { return JSON.parse(localStorage.getItem(CACHE_KEY)); } catch { return null; } })();
+    const cacheAge = cached ? Date.now() - cached.ts : Infinity;
+
+    if (cached && cacheAge < CACHE_TTL) {
+      products = cached.products;
+      buildCategoryChips();
+      renderProducts(document.getElementById("searchInput").value.trim());
+      const idle = window.requestIdleCallback || (fn => setTimeout(fn, 2000));
+      idle(() => fetchAndCache(false));
+      return;
+    }
+    if (cached) {
+      products = cached.products;
+      buildCategoryChips();
+      renderProducts(document.getElementById("searchInput").value.trim());
+      setTimeout(() => fetchAndCache(true), 100);
+      return;
+    }
+    grid.innerHTML = Array(6).fill(`<div class="shimmer"></div>`).join('');
+    fetchAndCache(true);
+  }
+
+  async function fetchAndCache(updateUI) {
+    const grid = document.getElementById("productList");
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 8000);
+      const res = await fetch(SHEET_URL + "&cb=" + Date.now(), { signal: controller.signal });
+      clearTimeout(timeout);
+      const text = await res.text();
+      const json = JSON.parse(text.substring(text.indexOf('{'), text.lastIndexOf('}') + 1));
+      const rows = json.table.rows;
+
+      const fetched = rows
+        .filter(r => r && r.c && r.c[0]?.v)
+        .map(r => ({
+          name:        String(r.c[0]?.v || "").trim(),
+          price:       String(r.c[1]?.v || "UGX 0").trim(),
+          description: String(r.c[2]?.v || "").trim(),
+          category:    String(r.c[3]?.v || "General").trim(),
+          stock:       String(r.c[4]?.v || "In Stock").trim(),
+          image:       String(r.c[5]?.v || "").trim()
+        }))
+        .filter(p => p.name && p.name.toLowerCase() !== "unknown" && p.name.toLowerCase() !== "name")
+        .map((p, i) => ({ ...p, id: i }));
+
+      const galleryUrls = rows.map(r => (r.c[6]?.v || "").toString().trim()).filter(Boolean);
+      try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), products: fetched, galleryUrls })); } catch {}
+
+      if (updateUI) {
+        products = fetched;
+        buildCategoryChips();
+        renderProducts(document.getElementById("searchInput").value.trim());
+      }
+    } catch {
+      if (updateUI && !products.length) {
+        grid.innerHTML = `<p style="grid-column:1/-1;text-align:center;color:#dc2626;padding:40px 0;">Could not load products. Please try again later.</p>`;
+      }
+    }
+  }
+
+  function buildCategoryChips() {
+    const row = document.getElementById("catFilterRow");
+    const categories = ["All", ...new Set(products.map(p => p.category).filter(Boolean))];
+    row.innerHTML = categories.map(c =>
+      `<button type="button" class="cat-chip${c === activeCategory ? " active" : ""}" data-cat="${c}">${c}</button>`
+    ).join("");
+    row.querySelectorAll(".cat-chip").forEach(chip => {
+      chip.addEventListener("click", () => {
+        activeCategory = chip.dataset.cat;
+        visibleProductCount = PRODUCTS_PAGE_SIZE;
+        row.querySelectorAll(".cat-chip").forEach(c => c.classList.remove("active"));
+        chip.classList.add("active");
+        renderProducts(document.getElementById("searchInput").value.trim());
+      });
+    });
+  }
+
+  function renderProducts(q = "") {
+    const grid = document.getElementById("productList");
+    const seeMoreBtn = document.getElementById("seeMoreBtn");
+    const filterKey = q + "|" + activeCategory;
+
+    if (filterKey !== lastRenderedQuery) {
+      visibleProductCount = PRODUCTS_PAGE_SIZE;
+      lastRenderedQuery = filterKey;
+    }
+
+    let fullList = products;
+    if (activeCategory !== "All") fullList = fullList.filter(p => p.category === activeCategory);
+    if (q) fullList = fullList.filter(p =>
+      p.name.toLowerCase().includes(q.toLowerCase()) ||
+      p.category.toLowerCase().includes(q.toLowerCase()));
+
+    const list = fullList.slice(0, visibleProductCount);
+    grid.innerHTML = "";
+
+    if (!fullList.length) {
+      const empty = document.createElement("p");
+      empty.style.cssText = "grid-column:1/-1;text-align:center;color:#64748b;padding:32px 0;";
+      empty.textContent = q ? `No products found matching "${q}".` : "No products in this category.";
+      grid.appendChild(empty);
+      seeMoreBtn.style.display = "none";
+      updateCatalogMore(q);
+      return;
+    }
+
+    const fragment = document.createDocumentFragment();
+    list.forEach(p => {
+      const inStock = (p.stock || "").toString().trim().toLowerCase() !== "out of stock";
+
+      const card = document.createElement("div");
+      card.className = "product-card";
+
+      const imgWrap = document.createElement("div");
+      imgWrap.className = "product-img-wrap";
+
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.alt = p.name;
+
+      if (p.image) {
+        imgWrap.style.setProperty("--thumb", `url('${p.image}')`);
+        imgWrap.classList.add("has-img");
+        img.src = p.image;
+        img.addEventListener("error", () => {
+          const fallback = `https://placehold.co/300x200/eff6ff/1a56db?text=${encodeURIComponent(p.name)}`;
+          imgWrap.style.setProperty("--thumb", `url('${fallback}')`);
+          img.src = fallback;
+        }, { once: true });
+      } else {
+        const fallback = `https://placehold.co/300x200/eff6ff/1a56db?text=${encodeURIComponent(p.name)}`;
+        imgWrap.style.setProperty("--thumb", `url('${fallback}')`);
+        imgWrap.classList.add("has-img");
+        img.src = fallback;
+      }
+      imgWrap.appendChild(img);
+
+      const body = document.createElement("div");
+      body.className = "product-body";
+
+      const cat = document.createElement("div");
+      cat.className = "product-cat";
+      cat.textContent = p.category;
+
+      const name = document.createElement("div");
+      name.className = "product-name";
+      name.textContent = p.name;
+
+      const price = document.createElement("div");
+      price.className = "product-price";
+      price.textContent = p.price;
+
+      const pill = document.createElement("span");
+      pill.className = "stock-pill " + (inStock ? "in" : "out");
+      pill.textContent = inStock ? "✦ In Stock" : "✕ Out of Stock";
+
+      const desc = document.createElement("p");
+      desc.className = "product-desc";
+      desc.textContent = p.description;
+
+      const viewBtn = document.createElement("a");
+      viewBtn.className = "view-product-btn";
+      viewBtn.href = "product.html?name=" + encodeURIComponent(p.name);
+      viewBtn.innerHTML = `View Product <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>`;
+      viewBtn.addEventListener("click", e => e.stopPropagation());
+
+      body.append(cat, name, price, pill, desc, viewBtn);
+      card.append(imgWrap, body);
+      card.addEventListener("click", () => { window.location.href = "product.html?name=" + encodeURIComponent(p.name); });
+      fragment.appendChild(card);
+    });
+
+    grid.appendChild(fragment);
+
+    const remaining = fullList.length - list.length;
+    if (remaining > 0) {
+      seeMoreBtn.style.display = "flex";
+      seeMoreBtn.textContent = `See More Products (${remaining} more)`;
+    } else {
+      seeMoreBtn.style.display = "none";
+    }
+
+    updateCatalogMore(q);
+  }
+
+  document.getElementById("seeMoreBtn").addEventListener("click", () => {
+    visibleProductCount += PRODUCTS_PAGE_SIZE;
+    renderProducts(document.getElementById("searchInput").value.trim());
+  });
+
+  document.getElementById("searchInput").addEventListener("input", e => renderProducts(e.target.value));
+
+  function updateCatalogMore(q) {
+    const box = document.getElementById("catalogMore");
+    const text = document.getElementById("catalogMoreText");
+    const btn = document.getElementById("catalogMoreBtn");
+    if (!box) return;
+    box.style.display = "block";
+    if (q) {
+      text.textContent = `Couldn't find "${q}"? We may still have it in stock.`;
+      btn.href = `https://wa.me/256766528078?text=${encodeURIComponent(`Hello Mexxa Pharmacy! 👋 I'm looking for "${q}" but couldn't find it listed on the site — do you have it in stock?`)}`;
+    } else {
+      text.textContent = `Looking for something else? We probably still have it.`;
+      btn.href = `https://wa.me/256766528078?text=${encodeURIComponent("Hello Mexxa Pharmacy! 👋 I'm looking for a medicine that's not listed on the site — can you help me find it?")}`;
+    }
+  }
+
+  function bindHamburger() {
+    const btn = document.getElementById("hamburgerBtn");
+    const drawer = document.getElementById("navDrawer");
+    const overlay = document.getElementById("navOverlay");
+    if (!btn || !drawer || !overlay) return;
+    function openDrawer() {
+      btn.classList.add("open"); drawer.classList.add("open"); overlay.classList.add("open");
+      btn.setAttribute("aria-expanded", "true"); document.body.style.overflow = "hidden";
+    }
+    function closeDrawer() {
+      btn.classList.remove("open"); drawer.classList.remove("open"); overlay.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false"); document.body.style.overflow = "";
+    }
+    btn.addEventListener("click", () => drawer.classList.contains("open") ? closeDrawer() : openDrawer());
+    overlay.addEventListener("click", closeDrawer);
+    drawer.querySelectorAll("a").forEach(a => a.addEventListener("click", closeDrawer));
+    document.addEventListener("keydown", e => { if (e.key === "Escape") closeDrawer(); });
+  }
+
+  function applyQueryParamSearch() {
+    try {
+      const q = new URLSearchParams(window.location.search).get("q");
+      if (q) {
+        const input = document.getElementById("searchInput");
+        if (input) input.value = q;
+      }
+    } catch {}
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => { bindHamburger(); applyQueryParamSearch(); loadProducts(); });
+  } else {
+    bindHamburger();
+    applyQueryParamSearch();
+    loadProducts();
+  }
+</script>
+</body>
+</html>
