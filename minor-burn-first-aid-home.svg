@@ -1,0 +1,18 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>A water tap running over cooling lines, representing burn first aid</title>
+<desc>A water tap running over cooling lines, representing burn first aid</desc>
+<rect width="800" height="450" fill="#faf7f0"/>
+<circle cx="660" cy="90" r="75" fill="#eef4ff" opacity="0.6"/>
+<circle cx="120" cy="370" r="65" fill="#e8d9bf" opacity="0.45"/>
+
+<g transform="translate(330,110)">
+  <path d="M30 0 Q40 20 60 20 Q80 20 80 40 Q80 55 70 55 L20 55 Q0 55 0 35 Q0 20 20 20 Q20 5 30 0 Z" fill="#96723f"/>
+  <rect x="30" y="55" width="20" height="20" fill="#96723f"/>
+</g>
+<g transform="translate(370,190)" stroke="#1a4fd6" stroke-width="5" stroke-linecap="round" fill="none">
+  <line x1="0" y1="0" x2="0" y2="30"/>
+  <line x1="20" y1="-5" x2="20" y2="35"/>
+  <line x1="40" y1="0" x2="40" y2="30"/>
+</g>
+
+</svg>

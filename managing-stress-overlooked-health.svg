@@ -1,0 +1,16 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>A calm head silhouette above gentle wave lines, representing stress management</title>
+<desc>A calm head silhouette above gentle wave lines, representing stress management</desc>
+<rect width="800" height="450" fill="#faf7f0"/>
+<circle cx="660" cy="90" r="75" fill="#eef4ff" opacity="0.6"/>
+<circle cx="120" cy="370" r="65" fill="#e8d9bf" opacity="0.45"/>
+
+<g transform="translate(350,130)">
+  <circle cx="40" cy="40" r="40" fill="#1a4fd6"/>
+  <path d="M15 45 Q25 30 40 45 Q55 60 65 45" fill="none" stroke="#eef4ff" stroke-width="5" stroke-linecap="round"/>
+</g>
+<g transform="translate(310,240)" stroke="#96723f" stroke-width="3" fill="none" opacity="0.6">
+  <path d="M0 0 Q30 -18 60 0 Q90 18 120 0 Q150 -18 180 0"/>
+</g>
+
+</svg>

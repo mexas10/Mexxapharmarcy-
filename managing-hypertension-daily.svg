@@ -1,0 +1,15 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>A heart shape with a pulse line through it, representing hypertension and heart health</title>
+<desc>A heart shape with a pulse line through it, representing hypertension and heart health</desc>
+<rect width="800" height="450" fill="#faf7f0"/>
+<circle cx="660" cy="90" r="75" fill="#eef4ff" opacity="0.6"/>
+<circle cx="120" cy="370" r="65" fill="#e8d9bf" opacity="0.45"/>
+
+<g transform="translate(310,140)">
+  <path d="M90 30 C90 5 60 -10 45 15 C30 -10 0 5 0 30 C0 65 45 100 45 100 C45 100 90 65 90 30 Z" fill="#e24b4a" opacity="0.9"/>
+</g>
+<g transform="translate(305,175)" stroke="#0f2a6e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  <path d="M0 0 L25 0 L35 -22 L48 22 L58 0 L100 0"/>
+</g>
+
+</svg>

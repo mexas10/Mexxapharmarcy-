@@ -1,0 +1,17 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>A water droplet representing hydration awareness</title>
+<desc>A water droplet representing hydration awareness</desc>
+<rect width="800" height="450" fill="#faf7f0"/>
+<circle cx="660" cy="90" r="75" fill="#eef4ff" opacity="0.6"/>
+<circle cx="120" cy="370" r="65" fill="#e8d9bf" opacity="0.45"/>
+
+<g transform="translate(360,120)">
+  <path d="M40 0 C65 40 75 65 40 100 C5 65 15 40 40 0 Z" fill="#1a4fd6"/>
+  <path d="M25 55 C30 65 35 68 40 68" fill="none" stroke="#eef4ff" stroke-width="5" stroke-linecap="round"/>
+</g>
+<g transform="translate(300,235)" fill="none" stroke="#96723f" stroke-width="3" opacity="0.6">
+  <path d="M0 0 Q40 -20 80 0"/>
+  <path d="M180 0 Q220 -20 260 0"/>
+</g>
+
+</svg>
