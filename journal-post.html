@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title id="pageTitle">Health Journal — Mexxa Pharmacy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/mexas10/Mexxapharmarcy-/main/android-chrome-192x192.png">
+<meta name="theme-color" content="#0f2a6e">
+<meta name="description" id="pageDesc" content="Health guidance from Mexxa Pharmacy.">
+<link rel="canonical" id="canonicalLink" href="https://mexxapharmacy.netlify.app/journal-post.html">
+<style>
+:root {
+  --blue: #1a4fd6; --blue-dark:#0f2a6e; --blue-deeper:#091a4a; --blue-light:#eef4ff;
+  --ivory:#faf7f0; --ivory-deep:#f2ede1;
+  --brass:#b8935f; --brass-dark:#96723f; --brass-light:#e8d9bf;
+  --bg:#f4f6fb; --surface:#ffffff; --border:#e2e8f2;
+  --text:#0c1526; --muted:#4f6070;
+  --radius:18px; --radius-lg:24px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:60px;}
+a{color:inherit;}
+
+header{
+  background:linear-gradient(135deg,#060e24 0%,#0c1a42 60%,#0f2460 100%);
+  padding:0 22px; height:72px; display:flex; align-items:center; justify-content:space-between;
+  position:sticky; top:0; z-index:1000; box-shadow:0 8px 32px rgba(4,10,30,.4);
+}
+.header-brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;}
+.header-logo{width:40px;height:40px;border-radius:12px;object-fit:contain;background:#fff;padding:3px;border:1.5px solid rgba(99,160,255,.25);}
+.brand-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:16px;color:#fff;}
+.brand-tag{font-size:11px;color:rgba(210,225,255,.7);}
+.back-link{display:flex;align-items:center;gap:6px;color:#cfe0ff;text-decoration:none;font-size:13px;font-weight:600;
+  padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);}
+
+.wrap{max-width:680px; margin:0 auto; padding:0 20px;}
+
+#loadingState{ padding:60px 20px; text-align:center; color:var(--muted); }
+#errorState{ display:none; padding:60px 20px; text-align:center; color:var(--muted); }
+#errorState button{
+  margin-top:14px; padding:10px 22px; border:none; border-radius:50px;
+  background:linear-gradient(135deg,var(--blue-dark),var(--blue)); color:#fff; font-weight:700;
+  font-size:13px; cursor:pointer; font-family:inherit;
+}
+
+#articleContent{ display:none; }
+
+.article-header{ padding:36px 0 26px; text-align:center; }
+.article-cat{
+  display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:700;
+  letter-spacing:1.5px; text-transform:uppercase; color:var(--brass-dark); margin-bottom:16px;
+}
+.article-cat::before{ content:''; width:16px; height:1.5px; background:var(--brass); }
+.article-title{
+  font-family:'Fraunces', serif; font-weight:500; font-size:clamp(26px,7vw,38px);
+  color:var(--blue-deeper); line-height:1.18; letter-spacing:-.4px; margin-bottom:16px;
+}
+.article-meta{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  font-size:12.5px; color:var(--muted); font-weight:600;
+}
+.article-meta .dot{ width:3px; height:3px; border-radius:50%; background:var(--muted); }
+
+.article-hero-img{
+  width:100%; height:220px; border-radius:var(--radius-lg); background-size:cover; background-position:center;
+  background:linear-gradient(135deg, var(--ivory), var(--ivory-deep)); margin-bottom:8px;
+}
+
+.apothecary-divider{ display:flex; align-items:center; gap:14px; margin:30px 0; }
+.apothecary-divider::before, .apothecary-divider::after{
+  content:''; flex:1; height:1px; background:linear-gradient(90deg, transparent, var(--brass-light) 50%, transparent);
+}
+.apothecary-mark{ width:22px; height:9px; border-radius:50px; background:linear-gradient(135deg, var(--brass), var(--brass-dark)); flex-shrink:0; }
+
+.article-body{ font-size:16px; color:var(--text); }
+.article-body p{ margin-bottom:20px; }
+.article-body p:first-of-type::first-letter{
+  font-family:'Fraunces', serif; font-size:52px; font-weight:500; float:left; line-height:.85;
+  padding:6px 8px 0 0; color:var(--brass-dark);
+}
+
+.disclaimer-box{
+  background:var(--ivory); border:1px solid var(--ivory-deep); border-radius:var(--radius);
+  padding:16px 18px; font-size:12.5px; color:var(--muted); margin:32px 0; display:flex; gap:10px;
+}
+.disclaimer-box .icon{ flex-shrink:0; }
+
+.cta-box{
+  background:linear-gradient(150deg, var(--blue-deeper) 0%, var(--blue-dark) 60%, var(--blue) 100%);
+  border-radius:var(--radius-lg); padding:28px 24px; text-align:center; margin:36px 0 8px; color:#fff;
+}
+.cta-box h3{ font-family:'Fraunces', serif; font-weight:500; font-size:20px; margin-bottom:8px; }
+.cta-box p{ font-size:13px; color:rgba(255,255,255,.8); margin-bottom:18px; }
+.cta-box a{
+  display:inline-flex; align-items:center; gap:7px; background:#fff; color:var(--blue-dark);
+  text-decoration:none; font-weight:800; font-size:13.5px; padding:12px 24px; border-radius:50px;
+}
+
+.back-to-journal{
+  display:inline-flex; align-items:center; gap:6px; margin-top:30px; color:var(--blue); font-weight:700;
+  font-size:13.5px; text-decoration:none;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="header-brand" href="index.html">
+    <img class="header-logo" src="https://raw.githubusercontent.com/mexas10/Mexxapharmarcy-/main/android-chrome-192x192.png" alt="Mexxa Pharmacy">
+    <div>
+      <div class="brand-name">Mexxa Pharmacy</div>
+      <span class="brand-tag">Health Journal</span>
+    </div>
+  </a>
+  <a class="back-link" href="journal.html">← Journal</a>
+</header>
+
+<div class="wrap">
+  <div id="loadingState">Loading article…</div>
+
+  <div id="errorState">
+    <div style="font-size:28px;margin-bottom:10px;">⚠️</div>
+    <div style="font-weight:700;color:var(--text);margin-bottom:4px;" id="errorMsg">Article not found</div>
+    <a href="journal.html" style="color:var(--blue);font-weight:700;font-size:13.5px;">← Back to Journal</a>
+  </div>
+
+  <div id="articleContent">
+    <div class="article-header">
+      <div class="article-cat" id="artCategory">General</div>
+      <h1 class="article-title" id="artTitle"></h1>
+      <div class="article-meta">
+        <span id="artReadTime">3 min read</span>
+        <span class="dot"></span>
+        <span id="artDate"></span>
+      </div>
+    </div>
+
+    <div class="article-hero-img" id="artHeroImg"></div>
+
+    <div class="apothecary-divider"><span class="apothecary-mark"></span></div>
+
+    <div class="article-body" id="artBody"></div>
+
+    <div class="disclaimer-box">
+      <span class="icon">ℹ️</span>
+      <span>This article is for general information only and isn't a substitute for professional medical advice. For guidance specific to you or your family, please speak with a pharmacist or doctor.</span>
+    </div>
+
+    <div class="cta-box">
+      <h3>Need something from this list?</h3>
+      <p>Order a refill or ask us directly — we reply fast on WhatsApp.</p>
+      <a href="refill.html">📋 Start an Order</a>
+    </div>
+
+    <a class="back-to-journal" href="journal.html">← More from the Health Journal</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  const API_URL = "https://script.google.com/macros/s/AKfycby6jIkbslz6mFfyods7PEBB0DQcY1COpOCzoiOZE_qW_9_0o3yU64w3HiXvvf-GPQWg/exec";
+
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get("slug");
+
+  async function loadArticle(){
+    if (!slug) return showError("No article specified.");
+    try {
+      const res = await fetch(`${API_URL}?action=journalPost&slug=${encodeURIComponent(slug)}`);
+      const data = await res.json();
+      if (!data.ok) return showError(data.error || "Article not found.");
+      renderArticle(data.article);
+    } catch (err) {
+      showError("Couldn't load this article. Check your connection and try again.");
+    }
+  }
+
+  function showError(msg){
+    document.getElementById("loadingState").style.display = "none";
+    document.getElementById("errorMsg").textContent = msg;
+    document.getElementById("errorState").style.display = "block";
+  }
+
+  function esc(s){ return String(s || "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+  function renderArticle(a){
+    document.getElementById("loadingState").style.display = "none";
+    document.getElementById("articleContent").style.display = "block";
+
+    document.title = a.title + " — Mexxa Pharmacy Health Journal";
+    document.getElementById("pageTitle").textContent = a.title + " — Mexxa Pharmacy";
+    document.getElementById("pageDesc").setAttribute("content", a.excerpt || a.title);
+
+    document.getElementById("artCategory").textContent = a.category || "General";
+    document.getElementById("artTitle").textContent = a.title;
+    document.getElementById("artReadTime").textContent = a.readTime || "3 min read";
+    document.getElementById("artDate").textContent = a.publishDate
+      ? new Date(a.publishDate).toLocaleDateString([], { year:'numeric', month:'long', day:'numeric' })
+      : "";
+
+    const heroImg = document.getElementById("artHeroImg");
+    if (a.imageUrl) {
+      heroImg.style.backgroundImage = `url('${a.imageUrl}')`;
+    } else {
+      heroImg.style.display = "none";
+    }
+
+    // Body: plain text with blank-line-separated paragraphs -> <p> tags
+    const paragraphs = String(a.body || "").split(/\n\s*\n/).filter(p => p.trim());
+    document.getElementById("artBody").innerHTML = paragraphs.map(p => `<p>${esc(p.trim()).replace(/\n/g, "<br>")}</p>`).join("");
+  }
+
+  const canonical = document.getElementById("canonicalLink");
+  if (canonical) canonical.setAttribute("href", window.location.origin + window.location.pathname + window.location.search);
+
+  loadArticle();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Rainy season health illustration</title>
+<desc>A stylized rain cloud over a mosquito net covering a bed, with a protective shield mark, representing rainy season health precautions.</desc>
+
+<rect width="800" height="450" fill="#faf7f0"/>
+
+<circle cx="620" cy="90" r="70" fill="#e8d9bf" opacity="0.5"/>
+<circle cx="130" cy="360" r="90" fill="#eef4ff" opacity="0.6"/>
+
+<g>
+  <ellipse cx="290" cy="140" rx="95" ry="48" fill="#1a4fd6"/>
+  <ellipse cx="210" cy="150" rx="60" ry="38" fill="#1a4fd6"/>
+  <ellipse cx="370" cy="150" rx="60" ry="38" fill="#1a4fd6"/>
+  <ellipse cx="290" cy="115" rx="55" ry="34" fill="#0f2a6e"/>
+</g>
+
+<g stroke="#1a4fd6" stroke-width="4" stroke-linecap="round" opacity="0.8">
+  <line x1="230" y1="205" x2="215" y2="245"/>
+  <line x1="270" y1="210" x2="255" y2="255"/>
+  <line x1="310" y1="210" x2="298" y2="255"/>
+  <line x1="350" y1="205" x2="338" y2="245"/>
+</g>
+
+<g>
+  <path d="M 300 260 Q 300 300 400 300 Q 500 300 500 260 L 500 380 L 300 380 Z" fill="none" stroke="#96723f" stroke-width="3"/>
+  <path d="M 300 260 Q 300 300 400 300 Q 500 300 500 260" fill="none" stroke="#96723f" stroke-width="3"/>
+  <line x1="330" y1="270" x2="330" y2="375" stroke="#96723f" stroke-width="1.5" opacity="0.5"/>
+  <line x1="365" y1="278" x2="365" y2="378" stroke="#96723f" stroke-width="1.5" opacity="0.5"/>
+  <line x1="400" y1="280" x2="400" y2="380" stroke="#96723f" stroke-width="1.5" opacity="0.5"/>
+  <line x1="435" y1="278" x2="435" y2="378" stroke="#96723f" stroke-width="1.5" opacity="0.5"/>
+  <line x1="470" y1="270" x2="470" y2="375" stroke="#96723f" stroke-width="1.5" opacity="0.5"/>
+  <rect x="330" y="330" width="140" height="50" rx="6" fill="#ffffff" stroke="#b8935f" stroke-width="2"/>
+</g>
+
+<g transform="translate(560,300)">
+  <path d="M40 0 L75 15 L75 45 Q75 80 40 100 Q5 80 5 45 L5 15 Z" fill="#b8935f"/>
+  <path d="M22 48 L35 62 L60 32" fill="none" stroke="#faf7f0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+
+<g stroke="#2458e8" stroke-width="3" stroke-linecap="round" opacity="0.55">
+  <line x1="90" y1="80" x2="80" y2="110"/>
+  <line x1="120" y1="60" x2="110" y2="95"/>
+  <line x1="680" y1="200" x2="670" y2="230"/>
+  <line x1="710" y1="230" x2="700" y2="260"/>
+</g>
+</svg>

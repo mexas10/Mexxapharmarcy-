@@ -1,0 +1,51 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>When a cold needs a doctor illustration</title>
+<desc>A stethoscope curled beside a thermometer and a simple checklist, representing symptom checking to decide between home care and a doctor visit.</desc>
+
+<rect width="800" height="450" fill="#faf7f0"/>
+
+<circle cx="120" cy="100" r="75" fill="#e8d9bf" opacity="0.45"/>
+<circle cx="690" cy="360" r="85" fill="#eef4ff" opacity="0.55"/>
+
+<g transform="translate(150,110)">
+  <path d="M0 0 Q0 60 60 60 Q120 60 120 0" fill="none" stroke="#1a4fd6" stroke-width="10" stroke-linecap="round"/>
+  <path d="M120 0 L120 -30" fill="none" stroke="#1a4fd6" stroke-width="10" stroke-linecap="round"/>
+  <path d="M0 0 L0 -30" fill="none" stroke="#1a4fd6" stroke-width="10" stroke-linecap="round"/>
+  <path d="M60 60 L60 130" fill="none" stroke="#1a4fd6" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="60" cy="165" r="38" fill="#0f2a6e"/>
+  <circle cx="60" cy="165" r="24" fill="#eef4ff"/>
+  <circle cx="0" cy="-38" r="14" fill="#0f2a6e"/>
+  <circle cx="120" cy="-38" r="14" fill="#0f2a6e"/>
+</g>
+
+<g transform="translate(430,80)">
+  <rect x="20" y="0" width="20" height="150" rx="10" fill="#ffffff" stroke="#b8935f" stroke-width="4"/>
+  <rect x="26" y="70" width="8" height="80" rx="4" fill="#96723f"/>
+  <circle cx="30" cy="165" r="26" fill="#96723f"/>
+  <circle cx="30" cy="165" r="15" fill="#b8935f"/>
+  <line x1="46" y1="20" x2="56" y2="20" stroke="#b8935f" stroke-width="3"/>
+  <line x1="46" y1="40" x2="54" y2="40" stroke="#b8935f" stroke-width="3"/>
+  <line x1="46" y1="60" x2="56" y2="60" stroke="#b8935f" stroke-width="3"/>
+</g>
+
+<g transform="translate(540,180)">
+  <rect x="0" y="0" width="180" height="150" rx="10" fill="#ffffff" stroke="#0f2a6e" stroke-width="3"/>
+  <rect x="0" y="0" width="180" height="26" rx="10" fill="#0f2a6e"/>
+  <rect x="20" y="50" width="16" height="16" rx="4" fill="none" stroke="#1a4fd6" stroke-width="3"/>
+  <path d="M23 58 L28 63 L35 52" fill="none" stroke="#1a4fd6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="46" y1="58" x2="150" y2="58" stroke="#e2e8f2" stroke-width="6" stroke-linecap="round"/>
+
+  <rect x="20" y="85" width="16" height="16" rx="4" fill="none" stroke="#1a4fd6" stroke-width="3"/>
+  <path d="M23 93 L28 98 L35 87" fill="none" stroke="#1a4fd6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="46" y1="93" x2="140" y2="93" stroke="#e2e8f2" stroke-width="6" stroke-linecap="round"/>
+
+  <rect x="20" y="120" width="16" height="16" rx="4" fill="none" stroke="#b8935f" stroke-width="3"/>
+  <line x1="46" y1="128" x2="130" y2="128" stroke="#e2e8f2" stroke-width="6" stroke-linecap="round"/>
+</g>
+
+<g fill="#b8935f" opacity="0.5">
+  <circle cx="250" cy="330" r="4"/>
+  <circle cx="270" cy="350" r="3"/>
+  <circle cx="230" cy="360" r="3"/>
+</g>
+</svg>

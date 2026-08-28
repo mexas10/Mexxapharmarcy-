@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Health Journal — Mexxa Pharmacy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/mexas10/Mexxapharmarcy-/main/android-chrome-192x192.png">
+<meta name="theme-color" content="#0f2a6e">
+<meta name="description" content="Practical health guidance from Mexxa Pharmacy — medication safety, first aid basics, seasonal health tips, and more, written for families in Kampala.">
+<link rel="canonical" id="canonicalLink" href="https://mexxapharmacy.netlify.app/journal.html">
+<style>
+:root {
+  --blue: #1a4fd6; --blue-mid:#2458e8; --blue-dark:#0f2a6e; --blue-deeper:#091a4a; --blue-light:#eef4ff;
+  --ivory:#faf7f0; --ivory-deep:#f2ede1;
+  --brass:#b8935f; --brass-dark:#96723f; --brass-light:#e8d9bf;
+  --bg:#f4f6fb; --surface:#ffffff; --surface-2:#f8fafd; --border:#e2e8f2;
+  --text:#080f20; --muted:#4f6070;
+  --radius-sm:10px; --radius:18px; --radius-lg:24px;
+  --shadow-sm:0 1px 3px rgba(10,30,90,.05), 0 2px 8px rgba(10,30,90,.04);
+  --shadow:0 2px 6px rgba(10,30,90,.05), 0 8px 28px rgba(10,30,90,.07);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:60px;}
+a{color:inherit;text-decoration:none;}
+
+header{
+  background:linear-gradient(135deg,#060e24 0%,#0c1a42 60%,#0f2460 100%);
+  padding:0 22px; height:72px; display:flex; align-items:center; justify-content:space-between;
+  position:sticky; top:0; z-index:1000; box-shadow:0 8px 32px rgba(4,10,30,.4);
+}
+.header-brand{display:flex;align-items:center;gap:12px;color:#fff;}
+.header-logo{width:40px;height:40px;border-radius:12px;object-fit:contain;background:#fff;padding:3px;border:1.5px solid rgba(99,160,255,.25);}
+.brand-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:16px;color:#fff;}
+.brand-tag{font-size:11px;color:rgba(210,225,255,.7);}
+.back-link{display:flex;align-items:center;gap:6px;color:#cfe0ff;font-size:13px;font-weight:600;
+  padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);}
+
+.hero{
+  background:linear-gradient(150deg, var(--blue-deeper) 0%, var(--blue-dark) 55%, var(--blue) 100%);
+  padding:52px 24px 44px; text-align:center; position:relative; overflow:hidden;
+}
+.hero::before{
+  content:''; position:absolute; inset:0;
+  background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size:44px 44px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 100% at 50% 0%, #000 30%, transparent 75%);
+  mask-image:radial-gradient(ellipse 70% 100% at 50% 0%, #000 30%, transparent 75%);
+}
+.hero-eyebrow{
+  display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:700;
+  letter-spacing:2px; text-transform:uppercase; color:var(--brass-light);
+  margin-bottom:14px; position:relative;
+}
+.hero-eyebrow::before{ content:''; width:16px; height:1.5px; background:var(--brass); }
+.hero h1{
+  font-family:'Fraunces', serif; font-weight:500; font-size:clamp(28px,7vw,42px);
+  color:#fff; letter-spacing:-.5px; line-height:1.15; margin-bottom:12px; position:relative;
+}
+.hero h1 em{ font-style:italic; color:var(--brass-light); }
+.hero p{ color:rgba(255,255,255,.8); font-size:14.5px; max-width:440px; margin:0 auto; position:relative; }
+
+.wrap{max-width:900px; margin:0 auto; padding:0 18px;}
+
+.apothecary-divider{
+  display:flex; align-items:center; gap:14px; max-width:900px; margin:0 auto; padding:26px 18px;
+}
+.apothecary-divider::before, .apothecary-divider::after{
+  content:''; flex:1; height:1px; background:linear-gradient(90deg, transparent, var(--brass-light) 50%, transparent);
+}
+.apothecary-mark{ width:22px; height:9px; border-radius:50px; background:linear-gradient(135deg, var(--brass), var(--brass-dark)); flex-shrink:0; }
+
+.filter-row{ display:flex; gap:8px; overflow-x:auto; padding-bottom:6px; margin-bottom:22px; scrollbar-width:none; }
+.filter-row::-webkit-scrollbar{display:none;}
+.filter-chip{
+  flex-shrink:0; padding:8px 16px; border-radius:50px; border:1.5px solid var(--border);
+  background:var(--surface); font-size:12.5px; font-weight:700; color:var(--muted); cursor:pointer;
+  transition:all .2s; font-family:inherit;
+}
+.filter-chip.active{ background:var(--blue-dark); border-color:var(--blue-dark); color:#fff; }
+
+.articles-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
+@media (min-width:640px){ .articles-grid{ grid-template-columns:1fr 1fr; } }
+
+.article-card{
+  background:var(--surface); border-radius:var(--radius-lg); border:1px solid var(--border);
+  box-shadow:var(--shadow-sm); overflow:hidden; display:flex; flex-direction:column;
+  transition:transform .3s cubic-bezier(.2,0,0,1), box-shadow .3s, opacity .5s, transform .5s;
+}
+.article-card:active{ transform:scale(.98); }
+.article-img{
+  height:150px; background:linear-gradient(135deg, var(--ivory), var(--ivory-deep));
+  display:flex; align-items:center; justify-content:center; font-size:34px; color:var(--brass);
+  background-size:cover; background-position:center;
+}
+.article-body{ padding:18px 18px 20px; flex:1; display:flex; flex-direction:column; }
+.article-cat{
+  font-size:10.5px; font-weight:700; letter-spacing:.6px; text-transform:uppercase; color:var(--brass-dark);
+  margin-bottom:8px;
+}
+.article-title{
+  font-family:'Fraunces', serif; font-weight:500; font-size:19px; color:var(--blue-deeper);
+  line-height:1.25; margin-bottom:8px;
+}
+.article-excerpt{ font-size:13px; color:var(--muted); line-height:1.55; margin-bottom:14px; flex:1; }
+.article-meta{ display:flex; align-items:center; gap:10px; font-size:11.5px; color:var(--muted); font-weight:600; }
+.article-meta .dot{ width:3px; height:3px; border-radius:50%; background:var(--muted); }
+
+.reveal-up{ opacity:0; transform:translateY(20px); }
+.reveal-up.in-view{ opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce){ .reveal-up{ opacity:1; transform:none; } }
+
+.empty-state, .error-state{ text-align:center; padding:50px 20px; color:var(--muted); grid-column:1/-1; }
+.error-state button{
+  margin-top:14px; padding:10px 22px; border:none; border-radius:50px;
+  background:linear-gradient(135deg,var(--blue-dark),var(--blue)); color:#fff; font-weight:700;
+  font-size:13px; cursor:pointer; font-family:inherit;
+}
+
+.skeleton-card{ border-radius:var(--radius-lg); background:#fff; border:1px solid var(--border); overflow:hidden; }
+.skeleton-img{ height:150px; background:linear-gradient(100deg,#eef3ff 30%,#f7faff 50%,#eef3ff 70%); background-size:200% 100%; animation:shimmer 1.4s infinite; }
+.skeleton-body{ padding:18px; }
+.skeleton-line{ height:12px; border-radius:6px; margin-bottom:10px; background:linear-gradient(100deg,#eef3ff 30%,#f7faff 50%,#eef3ff 70%); background-size:200% 100%; animation:shimmer 1.4s infinite; }
+@keyframes shimmer{ 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="header-brand" href="index.html">
+    <img class="header-logo" src="https://raw.githubusercontent.com/mexas10/Mexxapharmarcy-/main/android-chrome-192x192.png" alt="Mexxa Pharmacy">
+    <div>
+      <div class="brand-name">Mexxa Pharmacy</div>
+      <span class="brand-tag">Health Journal</span>
+    </div>
+  </a>
+  <a class="back-link" href="index.html">← Home</a>
+</header>
+
+<div class="hero">
+  <div class="hero-eyebrow">From the Pharmacy Counter</div>
+  <h1>Health Notes, <em>Written Plainly</em></h1>
+  <p>Practical guidance on medicine safety, first aid, and everyday wellness — for families in Kampala.</p>
+</div>
+
+<div class="apothecary-divider"><span class="apothecary-mark"></span></div>
+
+<div class="wrap">
+  <div class="filter-row" id="filterRow">
+    <button class="filter-chip active" data-cat="">All Posts</button>
+  </div>
+
+  <div class="articles-grid" id="articlesGrid">
+    <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body">
+      <div class="skeleton-line" style="width:40%"></div>
+      <div class="skeleton-line" style="width:85%"></div>
+      <div class="skeleton-line" style="width:60%"></div>
+    </div></div>
+    <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body">
+      <div class="skeleton-line" style="width:40%"></div>
+      <div class="skeleton-line" style="width:85%"></div>
+      <div class="skeleton-line" style="width:60%"></div>
+    </div></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ⚠️ Same Apps Script Web App URL used by refill.html / mexxa-staff.html
+  const API_URL = "https://script.google.com/macros/s/AKfycby6jIkbslz6mFfyods7PEBB0DQcY1COpOCzoiOZE_qW_9_0o3yU64w3HiXvvf-GPQWg/exec";
+
+  let allArticles = [];
+  let activeCategory = "";
+
+  const grid = document.getElementById("articlesGrid");
+  const filterRow = document.getElementById("filterRow");
+
+  async function loadArticles(){
+    try {
+      const res = await fetch(`${API_URL}?action=journalList`);
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error || "Failed to load");
+      allArticles = data.articles || [];
+      buildFilters();
+      renderArticles();
+    } catch (err) {
+      grid.innerHTML = `
+        <div class="error-state">
+          <div style="font-size:28px;margin-bottom:10px;">⚠️</div>
+          <div style="font-weight:700;color:var(--text);margin-bottom:4px;">Couldn't load articles</div>
+          <div>Check your connection and try again.</div>
+          <button id="retryBtn">↻ Retry</button>
+        </div>`;
+      document.getElementById("retryBtn").addEventListener("click", loadArticles);
+    }
+  }
+
+  function buildFilters(){
+    const cats = [...new Set(allArticles.map(a => a.category).filter(Boolean))];
+    filterRow.innerHTML = `<button class="filter-chip active" data-cat="">All Posts</button>` +
+      cats.map(c => `<button class="filter-chip" data-cat="${c}">${c}</button>`).join("");
+    filterRow.querySelectorAll(".filter-chip").forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterRow.querySelectorAll(".filter-chip").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeCategory = btn.dataset.cat;
+        renderArticles();
+      });
+    });
+  }
+
+  function renderArticles(){
+    const filtered = activeCategory ? allArticles.filter(a => a.category === activeCategory) : allArticles;
+
+    if (!filtered.length) {
+      grid.innerHTML = `<div class="empty-state">No articles here yet — check back soon.</div>`;
+      return;
+    }
+
+    grid.innerHTML = filtered.map(a => `
+      <a class="article-card reveal-up" href="journal-post.html?slug=${encodeURIComponent(a.slug)}">
+        <div class="article-img" ${a.imageUrl ? `style="background-image:url('${a.imageUrl}')"` : ""}>${a.imageUrl ? "" : "📰"}</div>
+        <div class="article-body">
+          <div class="article-cat">${a.category || "General"}</div>
+          <div class="article-title">${a.title}</div>
+          <div class="article-excerpt">${a.excerpt || ""}</div>
+          <div class="article-meta">
+            <span>${a.readTime || "3 min read"}</span>
+            <span class="dot"></span>
+            <span>${a.publishDate ? new Date(a.publishDate).toLocaleDateString([], {month:'short', day:'numeric'}) : ""}</span>
+          </div>
+        </div>
+      </a>
+    `).join("");
+
+    const cards = grid.querySelectorAll(".reveal-up");
+    cards.forEach((el, i) => { el.style.transitionDelay = Math.min(i * 60, 300) + "ms"; });
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
+      cards.forEach(el => el.classList.add("in-view"));
+    } else {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add("in-view"); io.unobserve(entry.target); }
+        });
+      }, { threshold: 0.05, rootMargin: "0px 0px 60px 0px" });
+      cards.forEach(el => io.observe(el));
+    }
+  }
+
+  // Auto-adapt canonical URL to whatever domain this is hosted on
+  const canonical = document.getElementById("canonicalLink");
+  if (canonical) canonical.setAttribute("href", window.location.origin + window.location.pathname);
+
+  loadArticles();
+})();
+</script>
+
+</body>
+</html>
